@@ -11582,11 +11582,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\KutatasModszertan\\Kutatas_core\\Kutatas_core\\Kutatas_core.csproj",
+      "projectUniqueName": "E:\\KutatasModszertan\\Kut_ASP\\Kutatas_core\\Kutatas_core\\Kutatas_core.csproj",
       "projectName": "Kutatas_core",
-      "projectPath": "E:\\KutatasModszertan\\Kutatas_core\\Kutatas_core\\Kutatas_core.csproj",
+      "projectPath": "E:\\KutatasModszertan\\Kut_ASP\\Kutatas_core\\Kutatas_core\\Kutatas_core.csproj",
       "packagesPath": "C:\\Users\\Gadriel\\.nuget\\packages\\",
-      "outputPath": "E:\\KutatasModszertan\\Kutatas_core\\Kutatas_core\\obj\\",
+      "outputPath": "E:\\KutatasModszertan\\Kut_ASP\\Kutatas_core\\Kutatas_core\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

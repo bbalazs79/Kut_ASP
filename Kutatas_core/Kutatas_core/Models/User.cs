@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Web;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -12,7 +13,9 @@ namespace Kutatas_core.Models
     {
         [Key]
         public int Id { get; set; }
+        [Column("UserName")]
         public string UserName { get; set; }
+        //[Column("Password")]
         public string Password { get; set; }
     }
 }
