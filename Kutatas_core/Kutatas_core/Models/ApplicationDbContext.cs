@@ -23,6 +23,10 @@ namespace Kutatas_core.Models
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
+            modelBuilder.Entity<User>(entity => {
+                entity.HasIndex(e => e.UserName).IsUnique();
+            });
+
         }
     }
 }
