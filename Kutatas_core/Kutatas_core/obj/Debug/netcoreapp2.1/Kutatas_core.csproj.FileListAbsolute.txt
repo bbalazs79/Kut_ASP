@@ -95,3 +95,4 @@ D:\Github\Kut_ASP\Kutatas_core\Kutatas_core\obj\Debug\netcoreapp2.1\Kutatas_core
 D:\Github\Kut_ASP\Kutatas_core\Kutatas_core\obj\Debug\netcoreapp2.1\Kutatas_core.pdb
 D:\Github\Kut_ASP\Kutatas_core\Kutatas_core\obj\Debug\netcoreapp2.1\Kutatas_core.csproj.CopyComplete
 D:\Github\Kut_ASP\Kutatas_core\Kutatas_core\obj\Debug\netcoreapp2.1\Razor\Views\Home\login.g.cshtml.cs
+E:\KutatasModszertan\Kut_ASP\Kutatas_core\Kutatas_core\obj\Debug\netcoreapp2.1\Razor\Views\Home\login.g.cshtml.cs

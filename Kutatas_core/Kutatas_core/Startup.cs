@@ -11,6 +11,8 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Pomelo.EntityFrameworkCore.MySql;
+//using Kutatas_core.IoC;
+using Kutatas_core.Controllers;
 
 namespace Kutatas_core
 {
@@ -19,18 +21,15 @@ namespace Kutatas_core
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
+            //UserController ss = new UserController();
+            //User user = ss.SelectUser("Balazs"); 
         }
 
         public IConfiguration Configuration { get; }
 
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
-        {
-            using (var context = new ApplicationDbContext())
-            {
-                context.Database.EnsureCreated();
-            }
-
+        {   
             services.Configure<CookiePolicyOptions>(options =>
             {
                 // This lambda determines whether user consent for non-essential cookies is needed for a given request.
@@ -44,6 +43,8 @@ namespace Kutatas_core
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
+            //IocContainer.Provider = (ServiceProvider)serviceProvider;
+
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
