@@ -10,6 +10,11 @@ namespace Kutatas_core.Controllers
 {
     public class HomeController : Controller
     {
+        public IActionResult Registration()
+        {
+            return View();
+        }
+
         public IActionResult Login()
         {
             return View();

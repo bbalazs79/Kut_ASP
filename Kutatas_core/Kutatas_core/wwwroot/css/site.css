@@ -24,13 +24,59 @@ body {
 
 }
 
-.sectionclass img{
+
+.form-login{
+    text-align:center;
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    padding:5px;
+   
+}
+.form-login input {
     width:100%;
-    height:95vh;
-    opacity:0.9;
+    margin: 10px 0px;
+    height:50px;
+    border-radius:10px;
+    border:1px solid black;
+}
+    .form-login button {
+        width: auto;
+        height: auto;
+        color: white;
+        background-color: lightgray;
+    }
+    .form-login button:hover{
+        background-color:darkgray;
+        border-color:transparent!important  ;
+    }
+    i{
+        font-size:1.5rem;
+        margin:2px;
+        
+    }
+    .sectionclass img {
+        width: 100%;
+        height: 95vh;
+        opacity: 0.9;
+    }
+    .login-title {
+    display: flex;
+    justify-content: center;
+    }
     
+    button:active{
+        background-color:transparent !important;
+    }
+.container {
+    position: relative;
 }
 
+.login-container {
+    width: 50%;
+    
+    position: absolute;
+}
 
 
 

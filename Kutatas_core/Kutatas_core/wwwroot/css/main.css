@@ -1,7 +1,39 @@
 ﻿*{
-    padding:0px;
     margin:0px;
+    padding:0px;
 }
-card{
-    width:50px !important;
+h1, h2, h3, a, s, span,label {
+    font-family: 'Indie Flower', cursive;
 }
+body {
+    background-image: url("http://www.wiedenhofer.com/bilder/terenten-pustertal-hotel-wiedenhofer-gastronomie-pizzeria-01.jpg");
+    background-repeat: no-repeat;
+    background-size:cover;
+    height: 100vh;
+}
+.registration-container{
+   
+    width:100%;
+}
+.form-registration {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 10px 10px;
+}
+form{
+    width:100%;
+  
+}
+.form-button {
+    margin: 15px auto;
+    display: flex;
+    justify-content: center;
+}
+label, h1{
+    color: white;
+}
+label{
+   
+    font-size:18px;
+}
+
