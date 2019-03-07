@@ -1,15 +1,13 @@
 ﻿using System;
-using System.Web;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Threading.Tasks;
 
 namespace Kutatas_core.Models
 {
-    public class User
-    {      
+    public class Employee
+    {
         [MinLength(3)]
         [MaxLength(255)]
         [Required]
@@ -19,18 +17,13 @@ namespace Kutatas_core.Models
         [MaxLength(255)]
         [Required]
         public string LastName { get; set; }
-
-        [MinLength(11)]
-        [MaxLength(11)]
-        [Required]
-        public int PhoneNumber { get; set; }
         
         [Key]
         [MinLength(7)]
         [MaxLength(255)]
         [Required]
         public string Email { get; set; }
-        
+
         [MinLength(8)]
         [MaxLength(255)]
         [Required]

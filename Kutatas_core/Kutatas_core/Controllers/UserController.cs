@@ -12,25 +12,47 @@ namespace Kutatas_core.Controllers
     {
         private ApplicationDbContext context = new ApplicationDbContext();
 
-        public void InsertUser(string name, string password)
+        public void InsertUser(string firstName, string lastName, string email, int phoneNumber, string password)
         {
-            User newUser = new User();
-            newUser.UserName = name;
-            newUser.Password = password;
-
-            // insert
-            using (context)
+            try
             {
-                var customers = context.Set<User>();
-                customers.Add(newUser);
-                context.SaveChanges();
+                User newUser = new User();
+                newUser.FirstName = firstName;
+                newUser.LastName = lastName;
+                newUser.Email = email;
+                newUser.PhoneNumber = phoneNumber;
+                newUser.Password = password;
+
+                // insert
+                using (context)
+                {
+                    if (firstName != null && lastName != null && email != null && password != null)
+                    {
+                        User user = context.User.Where(x => x.Email == email).FirstOrDefault<User>();
+                        if (user.Email == null && user.Email != newUser.Email)
+                        {
+                            var customers = context.Set<User>();
+                            customers.Add(newUser);
+                            context.SaveChanges();
+                        }
+                    }
+
+                }
+            }catch(Exception e)
+            {
+
             }
         }
 
-        public User SelectUser(string userName)
+        public User SelectUser(string email)
         {
-            User user = context.User.Where(x => x.UserName == userName).FirstOrDefault<User>();
-            return user;
-        }   
+            try
+            {
+                User user = context.User.Where(x => x.Email == email).FirstOrDefault<User>();
+                return user;
+            }catch(Exception e)
+            {}
+            return null;
+        }
     }
 }

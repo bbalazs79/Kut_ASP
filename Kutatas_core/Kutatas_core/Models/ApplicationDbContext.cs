@@ -9,6 +9,9 @@ namespace Kutatas_core.Models
     public class ApplicationDbContext : DbContext
     {
         public DbSet<User> User { get; set; }
+        public DbSet<Employee> Employee { get; set; }
+        public DbSet<Orders> Orders { get; set; }
+        public DbSet<Food> Food { get; set; }
 
         public ApplicationDbContext()
         {
@@ -24,9 +27,16 @@ namespace Kutatas_core.Models
         {
             base.OnModelCreating(modelBuilder);
             modelBuilder.Entity<User>(entity => {
-                entity.HasIndex(e => e.UserName).IsUnique();
+                entity.HasIndex(e => e.Email).IsUnique();
             });
 
+            modelBuilder.Entity<User>(entity => {
+                entity.HasIndex(e => e.PhoneNumber).IsUnique();
+            });
+
+            modelBuilder.Entity<Employee>(entity => {
+                entity.HasIndex(e => e.Email).IsUnique();
+            });
         }
     }
 }
