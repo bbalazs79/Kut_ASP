@@ -18,7 +18,10 @@ namespace Kutatas_core.Controllers
             user.Password = "asd";
             dbContext.Users.Add(user);
         }
-
+        public IActionResult Login()
+        {
+            return View();
+        }
         public IActionResult Index()
         {
             return View();
