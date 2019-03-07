@@ -8,14 +8,20 @@ using System.Threading.Tasks;
 
 namespace Kutatas_core.Models
 {
-    //[Table("Users")]
+    [Table("User")]
     public class User
     {
         [Key]
         public int Id { get; set; }
-        //[Column("UserName")]
+        
+        [MinLength(3)]
+        [MaxLength(255)]
+        [Required]
         public string UserName { get; set; }
-        //[Column("Password")]
+        
+        [MinLength(8)]
+        [MaxLength(255)]
+        [Required]
         public string Password { get; set; }
     }
 }
