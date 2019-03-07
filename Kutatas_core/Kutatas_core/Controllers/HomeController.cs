@@ -10,15 +10,6 @@ namespace Kutatas_core.Controllers
 {
     public class HomeController : Controller
     {
-        public HomeController(DomainModelMySqlContext dbContext)
-        {
-            User user = new User();
-            user.Id = 0;
-            user.UserName = "test";
-            user.Password = "asd";
-            dbContext.Users.Add(user);
-        }
-
         public IActionResult Index()
         {
             return View();
