@@ -15,14 +15,7 @@ body {
 
 
 
-.cardname{
-    font-size:28px;
-    color:lightgray;
-}
-.sectionclass{
-    width:100%;
 
-}
 
 
 .form-login{
@@ -78,12 +71,12 @@ body {
     position: absolute;
 }
 
+/*itt jártam a loginnal kedden!*/
+.button_container_text{
+    color:white;
 
 
-
-
-
-
+}
 /* Hide/rearrange for smaller screens */
 @media screen and (max-width: 767px) {
     /* Hide captions */

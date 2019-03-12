@@ -53,7 +53,7 @@
 
                 </div>
                 <div class="form-button">
-                    <button class="btn" onclick="InsertUser()">Registration</button>
+                    <button class="btn" id="registrationbtn" onclick="InsertUser()">Registration</button>
                 </div>
             </form>
             
@@ -70,11 +70,19 @@
     $('#password, #password2').on('keyup', function () {
         if ($('#password').val() == $('#password2').val()) {
             $('#message').html('Matching').css('color', 'green');
-            $('#password').html('').css('background-color', 'lightgreen');
-        } else
+                
+            $('#registrationbtn').css('pointer-events', 'auto');
+        } else {
             $('#message').html('Not Matching').css('color', 'red');
-
+            $('#registrationbtn').css('pointer-events', 'none');
+        }
+           
     });
+
+
+   
+   
+    
     /*user: email/ password/firstname / lastname/ city/ phone number/ address */
     
     function InsertUser() {    
