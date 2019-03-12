@@ -1,57 +1,59 @@
 ﻿@{
     ViewData["Title"] = "Registration Page";
 }
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 <body>
     <main class="container">
         <div>
         <section class="registration-container">
 
-            <form>
+            <form method="post" action="/home/login/" id="formid">
                 <label>
                     <h1>Registration</h1>
                 </label>
                 <div class="form-registration">
                     <div>
                         <label for="validationServer01">Email</label>
-                        <input type="email" class="form-control is-valid" id="validationServer01" placeholder="email@email.com" required>
+                        <input type="email" name="email" class="form-control is-valid" id="email" placeholder="email@email.com" required>
                     </div>
 
                     <div>
                         <label for="validationServer02">Password</label>
-                        <input type="text" class="form-control is-valid" id="validationServer02" placeholder="password" required>
+                        <input type="password" name="new-password" class="form-control is-valid" id="password"  placeholder="password" required>
                     </div>
 
                     <div>
-                        <label for="validationServer02">Password again</label>
-                        <input type="text" class="form-control is-valid" id="validationServer02" placeholder="password" required>
+                        <label for="validationServer02">Confirm Password</label>
+                        <input type="password" name="new-password" class="form-control is-valid" id="password2"  placeholder="password" required>
+                        <span id='message'></span>
                     </div>
 
                     <div>
                         <label for="validationServer01">First Name</label>
-                        <input type="text" class="form-control is-valid" id="validationServer01" placeholder="First Name" required>
+                        <input type="text" class="form-control is-valid" id="first_name" placeholder="First Name" required>
                     </div>
 
                     <div>
                         <label for="validationServer01">Last Name</label>
-                        <input type="text" class="form-control is-valid" id="validationServer01" placeholder="Last Name" required>
+                        <input type="text" class="form-control is-valid" id="last_name" placeholder="Last Name" required>
                     </div>
                     <div>
                         <label for="validationServer01">City</label>
-                        <input type="text" class="form-control is-valid" id="validationServer01" placeholder="City" required>
+                        <input type="text" class="form-control is-valid" id="city" placeholder="City" required>
                     </div>
                     <div>
-                        <label for="validationServer01">Zip Code</label>
-                        <input type="number" class="form-control is-valid" id="validationServer01" placeholder="example:3300" required>
+                        <label for="validationServer01">Phone number</label>
+                        <input type="number" class="form-control is-valid" id="phone" placeholder="example:+36201112242" required>
                     </div>
                     <div>
                         <label for="validationServer01">Address</label>
-                        <input type="text" class="form-control is-valid" id="validationServer01" placeholder="Cool str." required>
+                        <input type="text" class="form-control is-valid" id="address" placeholder="Cool str." required>
                     </div>
 
 
                 </div>
                 <div class="form-button">
-                    <button class="btn btn-primary" type="submit">Registration</button>
+                    <button class="btn" >Registration</button>
                 </div>
             </form>
             
@@ -62,3 +64,29 @@
 
     </main>
 </body>
+<script>
+    
+    
+    $('#password, #password2').on('keyup', function () {
+        if ($('#password').val() == $('#password2').val()) {
+            $('#message').html('Matching').css('color', 'green');
+            $('#password').html('').css('background-color', 'lightgreen');
+        } else
+            $('#message').html('Not Matching').css('color', 'red');
+
+    });
+    /*user: email/ password/firstname / lastname/ city/ phone number/ address */
+    var email = document.getElementById("email").value;
+    var password = document.getElementById("password").value;
+    var firstname = document.getElementById("firs_tname").value;
+    var lastname = document.getElementById("last_name").value;
+    var city = document.getElementById("city").value;
+    var zip = document.getElementById("phone").value;
+    var addres = document.getElementById("address").value;
+    //firstname/lastname/emailphoneNumber/password
+
+
+
+
+
+</script>
