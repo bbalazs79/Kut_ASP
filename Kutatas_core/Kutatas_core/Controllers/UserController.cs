@@ -12,7 +12,7 @@ namespace Kutatas_core.Controllers
     {
         private ApplicationDbContext context = new ApplicationDbContext();
 
-        public void InsertUser(string firstName, string lastName, string email, int phoneNumber, string password)
+        public void InsertUser(string firstName, string lastName, string email, string phoneNumber, string password, string city,string address)
         {
             try
             {
@@ -22,6 +22,8 @@ namespace Kutatas_core.Controllers
                 newUser.Email = email;
                 newUser.PhoneNumber = phoneNumber;
                 newUser.Password = password;
+                newUser.City = city;
+                newUser.Address = address;
 
                 // insert
                 using (context)
@@ -29,14 +31,10 @@ namespace Kutatas_core.Controllers
                     if (firstName != null && lastName != null && email != null && password != null)
                     {
                         User user = context.User.Where(x => x.Email == email).FirstOrDefault<User>();
-                        if (user.Email == null && user.Email != newUser.Email)
-                        {
                             var customers = context.Set<User>();
                             customers.Add(newUser);
                             context.SaveChanges();
-                        }
                     }
-
                 }
             }catch(Exception e)
             {

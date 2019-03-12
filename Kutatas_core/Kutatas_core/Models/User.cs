@@ -23,7 +23,7 @@ namespace Kutatas_core.Models
         [MinLength(11)]
         [MaxLength(11)]
         [Required]
-        public int PhoneNumber { get; set; }
+        public string PhoneNumber { get; set; }
         
         [Key]
         [MinLength(7)]
@@ -35,5 +35,11 @@ namespace Kutatas_core.Models
         [MaxLength(255)]
         [Required]
         public string Password { get; set; }
+        
+        [Required]
+        public string City { get; set; }
+
+        [Required]
+        public string Address { get; set; }
     }
 }

@@ -21,15 +21,20 @@ namespace Kutatas_core
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
-            //UserController ss = new UserController();
-            //User user = ss.SelectUser("Balazs"); 
+            UserController ss = new UserController();
+            ss.InsertUser("Balog","Balazs","email@email.com", "06302626314" ,"kiraly","Heves","DózsaGyörgy út 72"); 
         }
 
         public IConfiguration Configuration { get; }
 
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
-        {   
+        {
+            using (var context = new ApplicationDbContext())
+            {
+                context.Database.EnsureCreated();
+            }
+
             services.Configure<CookiePolicyOptions>(options =>
             {
                 // This lambda determines whether user consent for non-essential cookies is needed for a given request.
