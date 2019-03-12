@@ -12,7 +12,8 @@ namespace Kutatas_core.Controllers
     {
         private ApplicationDbContext context = new ApplicationDbContext();
 
-        public void InsertUser(string firstName, string lastName, string email, string phoneNumber, string password, string city,string address)
+        [HttpPost]
+        public ActionResult InsertUser(string firstName, string lastName, string email, string phoneNumber, string password, string city,string address)
         {
             try
             {
@@ -36,9 +37,10 @@ namespace Kutatas_core.Controllers
                             context.SaveChanges();
                     }
                 }
+                return new JsonResult(new { Succeed = true});
             }catch(Exception e)
             {
-
+                return new JsonResult(new { Succeed = false });
             }
         }
 
@@ -52,5 +54,11 @@ namespace Kutatas_core.Controllers
             {}
             return null;
         }
+
+        public IActionResult Index()
+        {
+            return View();
+        }
+
     }
 }

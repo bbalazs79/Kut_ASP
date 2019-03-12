@@ -22,7 +22,7 @@ namespace Kutatas_core
         {
             Configuration = configuration;
             UserController ss = new UserController();
-            ss.InsertUser("Balog","Balazs","email@email.com", "06302626314" ,"kiraly","Heves","DózsaGyörgy út 72"); 
+            //ss.InsertUser("Balog","Balazs","email@email.com", "06302626314" ,"kiraly","Heves","DózsaGyörgy út 72"); 
         }
 
         public IConfiguration Configuration { get; }
