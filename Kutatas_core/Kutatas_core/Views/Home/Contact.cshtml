@@ -9,13 +9,34 @@
     <p><span>FYI!</span>We offer full-service catering for any event, large or small. We understand your needs and we will cater the food to satisfy the biggerst criteria of them all, both look and taste.</p>
     <h2>Reserve a table, ask for today's special or just send us a message:</h2>
     <form>
-        <input type="text" name="name" placeholder="NAME">
-        <input type="number" name="people" placeholder="HOW MANY PEOPE">
-        <input type="date" name="date">
-        <input type="text" name="message" placeholder="MESSAGE\SPECIAL REQUIERS">
-        <input type="submit" name="send" value="SEND MESSAGE" id="send">
+        <input type="text" name="firstName" id="firstName" placeholder="FIRST NAME">
+        <input type="text" name="lastName" id="lastName" placeholder="LAST NAME">
+        <input type="number" name="people" id="people" placeholder="HOW MANY PEOPE">
+        <input type="date" name="date" id="date">
+        <input type="text" name="message" id="message" placeholder="MESSAGE\SPECIAL REQUIERS">
+
+        <input type="submit" onclick="Contact()" name="send" value="SEND MESSAGE" id="send">
     </form>
 
 
 
 </section>
+
+<script>
+    /* sample post  */ 
+    function Contact() {
+        $.post('/User/ContactUser', {
+            firstName: document.getElementById("firstName").value,
+            lastName: document.getElementById("lastName").value,
+            people: document.getElementById("people").value,
+            date: document.getElementById("date").value,
+            message: document.getElementById("message").value
+           
+        },
+            function (data) {
+                if (data.Succeed) {
+                    window.location.reload();
+                }
+            }, 'json');
+    }
+</script>

@@ -64,12 +64,12 @@ using Kutatas_core.Models;
             WriteLiteral("<script src=\"https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js\"></script>\r\n");
             EndContext();
             BeginContext(143, 2750, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("body", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "bc5ec16d7e5b46ae8fe4dcb43461dc55", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("body", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "99f8989f599b4924b626c85523c83fbe", async() => {
                 BeginContext(149, 105, true);
                 WriteLiteral("\r\n    <main class=\"container\">\r\n       \r\n        <section class=\"registration-container\">\r\n\r\n            ");
                 EndContext();
                 BeginContext(254, 2565, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "15c5244d35744531993b3028e9dff1ee", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "1ae17f4fd3134b9ba1d1de17da387528", async() => {
                     BeginContext(308, 2504, true);
                     WriteLiteral(@"
                 <label>

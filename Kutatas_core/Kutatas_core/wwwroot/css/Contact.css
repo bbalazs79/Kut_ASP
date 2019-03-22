@@ -40,12 +40,12 @@
             height: 50px;
             font-size: 1.4rem;
         }
-            .contact form input:nth-of-type(5) {
+            .contact form input:nth-of-type(6) {
                 
                 background-color: lightgray;
                 color: black;
             }
-                .contact form input:nth-of-type(5):hover {
+                .contact form input:nth-of-type(6):hover {
                     background-color: gray;
                     color: #fff;
                     border: 2px solid lightgray;
