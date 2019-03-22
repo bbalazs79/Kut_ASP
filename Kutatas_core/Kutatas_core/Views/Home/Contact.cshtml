@@ -1,17 +1,21 @@
 ﻿@{
     ViewData["Title"] = "Contact";
 }
-<h2>@ViewData["Title"]</h2>
-<h3>@ViewData["Message"]</h3>
 
-<address>
-    One Microsoft Way<br />
-    Redmond, WA 98052-6399<br />
-    <abbr title="Phone">P:</abbr>
-    425.555.0100
-</address>
+<section class="contact">
+    <h1>Contact</h1>
+    <hr />
+    <p>Find us at some address at some place or call us at 05050515-122330</p>
+    <p><span>FYI!</span>We offer full-service catering for any event, large or small. We understand your needs and we will cater the food to satisfy the biggerst criteria of them all, both look and taste.</p>
+    <h2>Reserve a table, ask for today's special or just send us a message:</h2>
+    <form>
+        <input type="text" name="name" placeholder="NAME">
+        <input type="number" name="people" placeholder="HOW MANY PEOPE">
+        <input type="date" name="date">
+        <input type="text" name="message" placeholder="MESSAGE\SPECIAL REQUIERS">
+        <input type="submit" name="send" value="SEND MESSAGE" id="send">
+    </form>
 
-<address>
-    <strong>Support:</strong> <a href="mailto:Support@example.com">Support@example.com</a><br />
-    <strong>Marketing:</strong> <a href="mailto:Marketing@example.com">Marketing@example.com</a>
-</address>
+
+
+</section>

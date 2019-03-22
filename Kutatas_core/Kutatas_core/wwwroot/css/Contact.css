@@ -1,0 +1,52 @@
+﻿body {
+
+}
+.contact {
+    
+    background-color: rgba(211, 211, 211, 0.5);
+    padding: 25px 250px;
+}
+
+    .contact h1 {
+        font-size: 3.5rem;
+        text-align: center;
+    }
+
+    .contact p {
+        font-size: 1.7rem;
+        margin: 24px 0px;
+
+    }
+
+        .contact p span {
+            background: black;
+            padding: 5px;
+            font-size: 1.7rem;
+            color:#fff;
+        }
+
+    .contact h2 {
+        font-size: 2rem;
+        margin: 24px 0px;
+    }
+
+    .contact form {
+        padding-bottom: 60px;
+    }
+
+        .contact form input {
+            width: 98%;
+            margin: 10px 0px;
+            height: 50px;
+            font-size: 1.4rem;
+        }
+            .contact form input:nth-of-type(5) {
+                
+                background-color: lightgray;
+                color: black;
+            }
+                .contact form input:nth-of-type(5):hover {
+                    background-color: gray;
+                    color: #fff;
+                    border: 2px solid lightgray;
+                }

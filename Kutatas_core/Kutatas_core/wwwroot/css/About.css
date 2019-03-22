@@ -1,0 +1,93 @@
+﻿*{
+    margin:0px;
+    padding:0px;
+}
+
+.aboutbody {
+    height:100%;
+}
+.about {
+    background-color: rgba(211, 211, 211, 0.4);
+    padding: 25px 250px;
+}
+
+    .titleabout{
+        color: #fff;
+        font-size: 3rem;
+        width: 100%;
+      
+       display:flex;
+       justify-content:center;
+        
+    }
+
+    .about article:nth-of-type(2) p {
+        font-size: 2rem;
+        margin: 25px 0px;
+        color: #fff;
+    }
+
+    .about article:nth-of-type(2) figure img {
+        display: block;
+        width: 100%;
+    }
+
+.textcontainer {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    margin: 0px;
+}
+
+    .textcontainer div p {
+        color: #fff;
+        text-align: start;
+    }
+
+    .textcontainer figure {
+        width: 150px;
+        margin-right: 120px;
+        padding: 25px 0px;
+    }
+
+        .textcontainer figure img {
+            width: 100%;
+            border-radius: 50%;
+        }
+
+.img_3 {
+   height:100%;
+}
+
+.nyitvatartascontainer{
+    
+}
+.nyitvatartascontainer article h1 {
+    text-align: left;
+    padding: 20px 0px;
+}
+
+.nyitvatartas {
+    display: flex;
+}
+
+    .nyitvatartas div {
+        width: 50%;
+        font-size: 24px
+    }
+
+        .nyitvatartas div li {
+            list-style: none;
+            background-color: transparent;
+            padding: 15px 0px;
+            color: white;
+        }
+
+.fullimg figure {
+    width: 100%;
+}
+
+    .fullimg figure img {
+        width: 100%;
+        filter: grayscale(70%);
+    }
