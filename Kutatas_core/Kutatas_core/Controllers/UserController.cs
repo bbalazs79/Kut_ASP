@@ -6,14 +6,27 @@ using Kutatas_core.IoC;
 using Kutatas_core.Models;
 using Microsoft.AspNetCore.Mvc;
 
+
 namespace Kutatas_core.Controllers
 {
     public class UserController : Controller
     {
         private ApplicationDbContext context = new ApplicationDbContext();
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="firstName"></param>
+        /// <param name="lastName"></param>
+        /// <param name="email"></param>
+        /// <param name="phoneNumber"></param>
+        /// <param name="password"></param>
+        /// <param name="city"></param>
+        /// <param name="address"></param>
+        /// <returns></returns>
+        #region adatbázisba ment ez a metódus
         [HttpPost]
-        public ActionResult InsertUser(string firstName, string lastName, string email, string phoneNumber, string password, string city,string address)
+        public ActionResult InsertUser(string firstName, string lastName, string email, string phoneNumber, string password, string city, string address)
         {
             try
             {
@@ -26,34 +39,57 @@ namespace Kutatas_core.Controllers
                 newUser.City = city;
                 newUser.Address = address;
 
-                // insert
                 using (context)
                 {
                     if (firstName != null && lastName != null && email != null && password != null)
                     {
                         User user = context.User.Where(x => x.Email == email).FirstOrDefault<User>();
-                            var customers = context.Set<User>();
-                            customers.Add(newUser);
-                            context.SaveChanges();
+                        var customers = context.Set<User>();
+                        customers.Add(newUser);
+                        context.SaveChanges();
                     }
                 }
-                return new JsonResult(new { Succeed = true});
-            }catch(Exception e)
+                return new JsonResult(new { Succeed = true });
+            }
+            catch (Exception e)
             {
                 return new JsonResult(new { Succeed = false });
             }
         }
+        #endregion
 
-        public User SelectUser(string email)
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="email"></param>
+        /// <returns></returns>
+        #region visszaad egy felhasználót email cím alapján
+        [HttpPost]
+        public ActionResult SelectUser(string email)
         {
             try
             {
                 User user = context.User.Where(x => x.Email == email).FirstOrDefault<User>();
-                return user;
-            }catch(Exception e)
-            {}
-            return null;
+                if (user.Email == null || user.Email == String.Empty)
+                    return new JsonResult(new { Success = false });
+                return new JsonResult(new
+                {
+                    Success = true,
+                    user.FirstName,
+                    user.LastName,
+                    user.Email,
+                    user.City,
+                    user.Address,
+                    user.PhoneNumber,
+                    user.Password
+                });
+            }
+            catch (Exception e)
+            {
+                return new JsonResult(new { Success = false });
+            }
         }
+        #endregion
 
         public IActionResult Index()
         {
