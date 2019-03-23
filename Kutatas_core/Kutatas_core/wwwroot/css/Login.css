@@ -1,0 +1,100 @@
+﻿*{
+    margin:0px;
+    padding:0px;
+}
+/*//menu nav link css//*/
+
+header {
+   
+    display: flex;
+    width: 100%;
+    text-decoration: none;
+    font-size: 2rem;
+    list-style-type: none;
+}
+.nav {
+    display: flex;
+    width: 100%;
+    justify-content:space-between
+}
+/*inside the menu, buttons positons and designed*/
+.left-side-container_to_the_signs li {
+   
+}
+    .left-side-container_to_the_signs li a {
+       display:flex;
+       justify-content:center;
+        text-align:center;
+        padding: 10px 5px;
+        font-size: 2rem;
+        color: #fff;
+    }
+.nav a {
+    padding: 10px 5px;
+    font-size: 2rem;
+    color: #fff;
+}
+/*ins menu over*/
+
+
+    li a:hover, .nav a:hover {
+        color:lightgray;
+        text-decoration:none;
+    }
+.dropdown-menu a {
+    font-size: 1.5rem;
+    color:black;
+}
+
+.left-side-container_to_the_signs {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.dropdown-menu {
+    flex-wrap: wrap;
+    min-width: 100px;
+    padding: 10px;
+    background-color:darkgray;
+}
+.open > .dropdown-menu {
+    display: flex;
+    justify-content: center;
+}
+.dropdown-menu a {
+    font-size:1.5rem;
+}
+/* menu designed over*/
+
+.login-container {
+    display: flex;
+    justify-content: center;
+}
+.form-login{
+    margin:50px 0px;
+    width:50%;
+}
+.form-login input{
+    width:100%;
+    margin:5px 0px;
+    height:3.2rem;
+}
+.div-login{
+    width:100%;
+}
+.button_container button{
+    margin:5px auto;
+    background-color:gray;
+}
+.button_container button:hover {
+     background-color:lightgray ;
+}
+.button_container p{
+    color:#fff;
+    font-size:1.4rem;
+}
+.button_container p a{
+    font-size:2rem;
+    
+}

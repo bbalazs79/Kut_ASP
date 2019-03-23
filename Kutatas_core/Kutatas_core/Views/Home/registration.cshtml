@@ -4,8 +4,19 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 <body>
     <main class="container">
-        <div>
-            <section class="registration-container">
+
+       
+        <section class="registration-container">
+
+            <form method="post" action="/home/login/" id="formid">
+                <label>
+                    <h1>Registration</h1>
+                </label>
+                <div class="form-registration">
+                    <div>
+                        <label for="validationServer01">Email</label>
+                        <input type="email" name="email" class="form-control is-valid" id="email" placeholder="email@email.com" required>
+                    </div>
 
                 <form method="post" @*action="/home/login/" *@ id="formid">
                     <label>

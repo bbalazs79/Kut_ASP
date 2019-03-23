@@ -2,13 +2,13 @@
     margin:0px;
     padding:0px;
 }
-h1, h2, h3, a, s, span,label {
+h1, h2, h3, h4, p, a, span, input, s, label, button {
     font-family: 'Indie Flower', cursive;
 }
 body {
     background-image: url("http://www.wiedenhofer.com/bilder/terenten-pustertal-hotel-wiedenhofer-gastronomie-pizzeria-01.jpg");
     background-repeat: no-repeat;
-    background-size:cover;
+    background-size: cover;
     height: 100vh;
 }
 .registration-container{

@@ -7,8 +7,11 @@
 
     <environment include="Development">
         <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
-        <link rel="stylesheet" href="~/css/site.css" />
+        <link rel="stylesheet" href="~/css/Login.css" />
         <link rel="stylesheet" href="~/css/main.css" />
+        <link rel="stylesheet" href="~/css/About.css" />
+        <link rel="stylesheet" href="~/css/Home.css" />
+        <link rel="stylesheet" href="~/css/Contact.css" />
         <link href="https://fonts.googleapis.com/css?family=Indie+Flower" rel="stylesheet">
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
     </environment>
@@ -20,44 +23,32 @@
     </environment>
 </head>
 <body>
+    <header class="container">
+        <nav class="nav">
+            <a asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+            <a asp-area="" asp-controller="Home" asp-action="About">About</a>
+            <a asp-area="" asp-controller="Home" asp-action="Contact">Contact</a>
 
-    <nav class="navbar navbar-inverse navbar-fixed-top">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-
-                </button>
-             
-
-            </div>
-            <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    <li><a asp-area="" asp-controller="Home" asp-action="Registration" id="Registration">Registration</a></li>
-                    <li><a asp-area="" asp-controller="Home" asp-action="Login" >Login</a></li>
-                    <li><a asp-area="" asp-controller="Home" asp-action="Index">Home</a></li>
-                    <li><a asp-area="" asp-controller="Home" asp-action="About">About</a></li>
-                    <li><a asp-area="" asp-controller="Home" asp-action="Contact">Contact</a></li>
-                </ul>
-            </div>
+        </nav>
+        <div class="left-side-container_to_the_signs">
+            <li class="nav-item dropdown leftside">
+                <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Sign in/up</a>
+                <div class="dropdown-menu">
+                    <a asp-area="" asp-controller="Home" asp-action="Registration" id="Registration">Sign Up!</a>
+                    <a asp-area="" asp-controller="Home" asp-action="Login">Sign In!</a>
+                </div>
+            </li>
         </div>
-    </nav>
-
+    </header>
+    
     <partial name="_CookieConsentPartial" />
 
     <main>
         @RenderBody()
-        <hr />
 
 
 
-        <footer>
-            <p>&copy; 2019 - Kutatas_core</p>
-        </footer>
+
 
 
 

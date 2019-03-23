@@ -8,12 +8,12 @@
            
              
 
-            <form>
+            <form class="form-login">
 
                 <label class="login-title">
                     <h1>Login to your account</h1>
                 </label>
-                <div class="form-login">
+                <div class="div-login">
 
 
                     <label for="validationServer01">Email</label>
@@ -25,7 +25,7 @@
 
 
                     <div class="button_container">
-                        <button class="btn btn-primary" type="submit"><i class="fas fa-sign-in-alt"></i>Submit form</button>
+                        <button class="btn btn-primary" type="submit"><i class="fas fa-sign-in-alt"></i>Sign in</button>
                         <p class="button_container_text">Don't you have an account?<span> <a href="Registration">Click here</a></span> to registration</p>
                     </div>
                 </div>
@@ -36,31 +36,5 @@
 
     </main>
 </body>
-<script>
-    animation();
-    var x = screen.width/6;
-    
-   
-    function animation() {
-        
-        
-        var elem = document.getElementById("animate");
-        var pos = 0;
-        var id = setInterval(frame, 0.1);
-        function frame() {
-            if (pos == x) {
-                
-                clearInterval(id);
-            } else {
-                pos++;
-                elem.style.left = pos + "px";
-                console.log(x);
-            }
-        }
-    }
-
-  
-
-</script>
 
 
