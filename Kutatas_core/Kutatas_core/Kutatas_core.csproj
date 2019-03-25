@@ -16,6 +16,8 @@
     <PackageReference Include="Microsoft.EntityFrameworkCore.Abstractions" Version="2.1.8" />
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.1.1" />
     <PackageReference Include="Pomelo.EntityFrameworkCore.MySql" Version="2.1.4" />
+    <PackageReference Include="Telerik.UI.for.AspNet.Core.Trial" Version="2018.3.911" />
+    <PackageReference Include="WisdomCloud.KendoUI" Version="2.10.2" />
   </ItemGroup>
 
 </Project>

@@ -5,7 +5,7 @@
 <body>
     <main class="container">
 
-       
+
         <section class="registration-container">
 
             <form method="post" action="/home/login/" id="formid">
@@ -18,58 +18,58 @@
                         <input type="email" name="email" class="form-control is-valid" id="email" placeholder="email@email.com" required>
                     </div>
 
-                <form method="post" @*action="/home/login/" *@ id="formid">
-                    <label>
-                        <h1>Registration</h1>
-                    </label>
-                    <div class="form-registration">
-                        <div>
-                            <label for="validationServer01">Email</label>
-                            <input type="email" name="email" class="form-control is-valid" id="email" placeholder="email@email.com" required>
-                        </div>
+                    <form method="post" @*action="/home/login/" *@ id="formid">
+                        <label>
+                            <h1>Registration</h1>
+                        </label>
+                        <div class="form-registration">
+                            <div>
+                                <label for="validationServer01">Email</label>
+                                <input type="email" name="email" class="form-control is-valid" id="email" placeholder="email@email.com" required>
+                            </div>
 
-                        <div>
-                            <label for="validationServer02">Password</label>
-                            <input type="password" name="new-password" class="form-control is-valid" id="password" placeholder="password" required>
-                        </div>
+                            <div>
+                                <label for="validationServer02">Password</label>
+                                <input type="password" name="new-password" class="form-control is-valid" id="password" placeholder="password" required>
+                            </div>
 
-                        <div>
-                            <label for="validationServer02">Confirm Password</label>
-                            <input type="password" name="new-password" class="form-control is-valid" id="password2" placeholder="password" required>
-                            <span id='message'></span>
-                        </div>
+                            <div>
+                                <label for="validationServer02">Confirm Password</label>
+                                <input type="password" name="new-password" class="form-control is-valid" id="password2" placeholder="password" required>
+                                <span id='message'></span>
+                            </div>
 
-                        <div>
-                            <label for="validationServer01">First Name</label>
-                            <input type="text" class="form-control is-valid" id="first_name" placeholder="First Name" required>
-                        </div>
+                            <div>
+                                <label for="validationServer01">First Name</label>
+                                <input type="text" class="form-control is-valid" id="first_name" placeholder="First Name" required>
+                            </div>
 
-                        <div>
-                            <label for="validationServer01">Last Name</label>
-                            <input type="text" class="form-control is-valid" id="last_name" placeholder="Last Name" required>
-                        </div>
-                        <div>
-                            <label for="validationServer01">City</label>
-                            <input type="text" class="form-control is-valid" id="city" placeholder="City" required>
-                        </div>
-                        <div>
-                            <label for="validationServer01">Phone number</label>
-                            <input type="number" class="form-control is-valid" id="phone" placeholder="example:+36201112242" required>
-                        </div>
-                        <div>
-                            <label for="validationServer01">Address</label>
-                            <input type="text" class="form-control is-valid" id="address" placeholder="Cool str." required>
-                        </div>
-
-
-                    </div>
-                    <div class="form-button">
-                        <button class="btn" type="button" id="registrationbtn" onclick="InsertUser()">Registration</button>
-                    </div>
-                </form>
+                            <div>
+                                <label for="validationServer01">Last Name</label>
+                                <input type="text" class="form-control is-valid" id="last_name" placeholder="Last Name" required>
+                            </div>
+                            <div>
+                                <label for="validationServer01">City</label>
+                                <input type="text" class="form-control is-valid" id="city" placeholder="City" required>
+                            </div>
+                            <div>
+                                <label for="validationServer01">Phone number</label>
+                                <input type="number" class="form-control is-valid" id="phone" placeholder="example:+36201112242" required>
+                            </div>
+                            <div>
+                                <label for="validationServer01">Address</label>
+                                <input type="text" class="form-control is-valid" id="address" placeholder="Cool str." required>
+                            </div>
 
 
-            </section>
+                        </div>
+                        <div class="form-button">
+                            <button class="btn" type="button" id="registrationbtn" onclick="InsertUser()">Registration</button>
+                        </div>
+                    </form>
+            </form>
+
+        </section>
 
 
 
@@ -78,8 +78,6 @@
 <script>
     var user = [];
     
-
-
     $('#password, #password2').on('keyup', function () {
         if ($('#password').val() == $('#password2').val()) {
             $('#message').html('Matching').css('color', 'green');
@@ -93,32 +91,23 @@
     });
 
     /*user: email/ password/firstname / lastname/ city/ phone number/ address */
-
-    function SelectUser() {
-        $.post('/User/SelectUser', {
-            email: document.getElementById("email").value
-        }, function (data) {
-            debugger;
-            user = data;
-        }, 'json');
-    }
-
+    
     function InsertUser() {
         debugger;
         SelectUser();
-        if (user.email == document.getElementById("email").value) {
+        if (user.email == $("#email").val()) {
             console.log("true");
         } else {
             console.log("false");
         }
         $.post('/User/InsertUser', {
-            firstName: document.getElementById("first_name").value,
-            lastName: document.getElementById("last_name").value,
-            email: document.getElementById("email").value,
-            phoneNumber: document.getElementById("phone").value,
-            password: document.getElementById("password").value,
-            city: document.getElementById("city").value,
-            address: document.getElementById("address").value
+            firstName: $("#first_name").val(),
+            lastName: $("#last_name").val(),
+            email: $("#email").val(),
+            phoneNumber: $("#phone").val(),
+            password: $("#password").val(),
+            city: $("#city").val(),
+            address: $("#address").val()
         },
             function (data) {
                 if (data.Succeed) {

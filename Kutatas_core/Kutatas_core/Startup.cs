@@ -11,8 +11,8 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Pomelo.EntityFrameworkCore.MySql;
-//using Kutatas_core.IoC;
 using Kutatas_core.Controllers;
+using Newtonsoft.Json.Serialization;
 
 namespace Kutatas_core
 {
@@ -42,7 +42,10 @@ namespace Kutatas_core
                 options.MinimumSameSitePolicy = SameSiteMode.None;
             });
 
-            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
+            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1)
+                .AddJsonOptions(options =>
+            options.SerializerSettings.ContractResolver = new DefaultContractResolver());
+            services.AddKendo();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -68,6 +71,7 @@ namespace Kutatas_core
                     name: "default",
                     template: "{controller=Home}/{action=Index}/{id?}");
             });
+            app.UseKendo(env);
         }
     }
 }

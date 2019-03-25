@@ -69,20 +69,10 @@ namespace Kutatas_core.Controllers
         {
             try
             {
-                User user = context.User.Where(x => x.Email == email).FirstOrDefault<User>();
-                if (user.Email == null || user.Email == String.Empty)
+                var result = context.User.Where(x => x.Email == email).FirstOrDefault<User>();
+                if (result.Email == null || result.Email == String.Empty)
                     return new JsonResult(new { Success = false });
-                return new JsonResult(new
-                {
-                    Success = true,
-                    user.FirstName,
-                    user.LastName,
-                    user.Email,
-                    user.City,
-                    user.Address,
-                    user.PhoneNumber,
-                    user.Password
-                });
+                return new JsonResult(result);
             }
             catch (Exception e)
             {
