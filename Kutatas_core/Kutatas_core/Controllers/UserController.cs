@@ -81,6 +81,55 @@ namespace Kutatas_core.Controllers
         }
         #endregion
 
+        /// <summary>
+        /// Update metódus 
+        /// A felhasználók adatainak módosítására szolgál 
+        /// </summary>
+        /// <param name="firstName"></param>
+        /// <param name="lastName"></param>
+        /// <param name="email"></param>
+        /// <param name="phoneNumber"></param>
+        /// <param name="password"></param>
+        /// <param name="city"></param>
+        /// <param name="address"></param>
+        /// <returns></returns>
+        #region Módosítja bizonyos rekordok tartalmát
+        [HttpPost]
+        public ActionResult UpdateUser(string firstName, string lastName, string email, string phoneNumber, string password, string city, string address)
+        {
+            try
+            {
+
+                var result = context.User.Where(x => x.Email == email).FirstOrDefault<User>();
+                    if (result.Email == null || result.Email == String.Empty)
+                        return new JsonResult(new { Success = false });
+
+                result.FirstName = firstName;
+                result.LastName = lastName;
+                result.Email = email;
+                result.PhoneNumber = phoneNumber;
+                result.Password = password;
+                result.City = city;
+                result.Address = address;
+
+                using (context)
+                {
+                    if (firstName != null && lastName != null && email != null && password != null)
+                    {
+                        var customers = context.Set<User>();
+                        customers.Update(result);
+                        context.SaveChanges();
+                    }
+                }
+                return new JsonResult(new { Succeed = true });
+            }
+            catch (Exception e)
+            {
+                return new JsonResult(new { Succeed = false });
+            }
+        }
+        #endregion
+
         public IActionResult Index()
         {
             return View();
