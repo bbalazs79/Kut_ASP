@@ -57,7 +57,7 @@ using Kutatas_core.Models;
 #line default
 #line hidden
             BeginContext(41, 1998, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("body", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3d180161e2bd462b9016dfcabbb48fe3", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("body", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "91ae676a1d294842b1e9fef82e79f424", async() => {
                 BeginContext(65, 1967, true);
                 WriteLiteral(@"
 

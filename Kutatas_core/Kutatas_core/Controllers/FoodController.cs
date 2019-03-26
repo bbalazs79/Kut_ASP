@@ -12,6 +12,12 @@ namespace Kutatas_core.Controllers
     public class FoodController : Controller
     {
         private ApplicationDbContext context = new ApplicationDbContext();
+
+        /// <summary>
+        /// Eltárolja adatbázisba a feltölteni kívánt kajákat
+        /// </summary>
+        /// <param name="name"></param>
+        /// <param name="price"></param>
         #region Kaja mentése adatbázisba
         public void InsertFood(string name, int price)
         {
@@ -36,7 +42,7 @@ namespace Kutatas_core.Controllers
         }
         #endregion
 
-        #region Kép konvertálás és mentés adatbáziba
+
         /// <summary>
         /// Képet ment az adatbázisba
         /// Átalakítást végez hogy a fájl menthető legyen
@@ -44,6 +50,7 @@ namespace Kutatas_core.Controllers
         /// <param name="food"></param>
         /// <param name="Image"></param>
         /// <returns></returns> 
+        #region Kép konvertálás és mentés adatbáziba
         public async Task<IActionResult> SaveFileFromDataBase(Food food, IFormFile Image)
         {
             try
@@ -80,5 +87,28 @@ namespace Kutatas_core.Controllers
             return null;
         }
         #endregion
+
+        /// <summary>
+        /// Visszaadja az adatbázisból az összes ételt amit mentettek
+        /// Listázás miatt kell
+        /// </summary>
+        /// <returns></returns>
+        #region Az összes ételt kilistázza
+        [HttpPost]
+        public ActionResult SelectAllFood()
+        {
+            try
+            {
+                var result = context.Food;
+                return new JsonResult(result);
+            }
+            catch (Exception e)
+            {
+                return new JsonResult(new { Success = false });
+            }
+        }
+        #endregion
+
+
     }
 }
