@@ -10,6 +10,12 @@ namespace Kutatas_core.Controllers
 {
     public class HomeController : Controller
     {
+
+        /// <summary>
+        /// Admin cshtml 
+        /// </summary>
+        /// <returns></returns>
+        
         public IActionResult Registration()
         {
             return View();

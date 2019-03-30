@@ -1,32 +1,24 @@
 ﻿@{
-    ViewData["Title"] = "Home Page";
+    ViewData["Title"] = "Admin List Page";
 }
-
 
 <body class="container">
     <header class="container">
         <nav class="nav">
-            <a asp-area="" asp-controller="Home" asp-action="Index">Home</a>
-            <a asp-area="" asp-controller="Home" asp-action="About">About</a>
-            <a asp-area="" asp-controller="Home" asp-action="Contact">Contact</a>
+
             <a asp-area="" asp-controller="Admin" asp-action="Admin" id="admin">Admin</a>
-
-
-
+            <a asp-area="" asp-controller="Admin" asp-action="List" id="admin">List</a>
+            <a asp-area="" asp-controller="Admin" asp-action="Upload" id="upload">Upload</a>
         </nav>
         <div class="left-side-container_to_the_signs">
             <li class="nav-item dropdown leftside">
-                <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Sign in/up</a>
-                <div class="dropdown-menu" id="drop">
-                    <a asp-area="" asp-controller="Home" asp-action="Registration" id="Registration">Sign Up!</a>
-                    <a asp-area="" asp-controller="Home" asp-action="Login"> Sign In!</a>
-                </div>
+
+                <a asp-area="" asp-controller="Home" asp-action="Login"> Sign out!</a>
+
             </li>
         </div>
     </header>
-   
     <section class="index_container">
-        
         <section class="food_container">
             <div class="food_list">
                 <div class="food_description_container">

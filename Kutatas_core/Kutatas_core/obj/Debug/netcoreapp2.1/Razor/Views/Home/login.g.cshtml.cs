@@ -59,12 +59,12 @@ using Kutatas_core.Models;
 #line default
 #line hidden
             BeginContext(46, 1190, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("body", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "2a173ff6958c4ff3b8338ba5d5d5ad96", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("body", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "359b76bcd4134e299057db8fe40f58ac", async() => {
                 BeginContext(52, 108, true);
                 WriteLiteral("\r\n    <main class=\"container\">\r\n\r\n        <section class=\"login-container\" id=\"animate\">\r\n\r\n\r\n\r\n            ");
                 EndContext();
                 BeginContext(160, 1030, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "fc6c48019eb642c69f42942d58efa86f", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "a269e6d3c50b4eeb80e2beef3381e650", async() => {
                     BeginContext(185, 998, true);
                     WriteLiteral(@"
 
