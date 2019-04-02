@@ -1,0 +1,90 @@
+﻿.upload_over_container {
+    display: flex;
+   justify-content:space-between;
+   width:100%;
+}
+.upload_over_container h1{
+    width:50%;
+}
+
+.upload_over_container h1{
+    text-align:center;
+}
+.upload_down_container{
+    display:flex;
+
+}
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+    
+}
+
+.uploadform{
+    width:100%;
+    display:flex;
+    justify-content:space-between;
+}
+    .uploadform div:nth-of-type(1), .uploadform div:nth-of-type(2), .uploadform div:nth-of-type(3){
+        text-align: center;
+        margin: auto;
+    }
+        .uploadform div:nth-of-type(2) input {
+            width: 270px;
+            height: 40px;
+            font-size: 2rem;
+            opacity: 0.7;
+            border-radius: 5px;
+        }
+        .preview {
+            width: 50%;
+        }
+.upload_down_container div{
+    width:50%;
+    text-align:center;
+}
+.inputfile{
+    color:#fff;
+    width:50%;
+    height:50px;
+}
+.preview img {
+    width:200px!important;
+    height:100px!important;
+}
+.preview li{
+    list-style:none;
+}
+.preview p{
+    color:white;
+    font-size:16px;
+}
+.foodnameinput{
+    width: 270px;
+    height: 40px;
+    font-size: 2rem;
+    opacity: 0.7;
+    border-radius: 5px;
+}
+
+.upload_submit_container{
+    display:flex;
+    width:100%;
+    justify-content:center;
+}
+    .upload_submit_container button {
+        width:100px;
+        height:30px;
+        margin: 5px auto;
+        background-color: gray;
+        border:1px;
+        border-radius:2px;
+        border-style:outset;
+    }
+        .upload_submit_container button:hover {
+            background-color: lightgray;
+        }
+        .Choose_image_label:hover{
+            color:#4cff00;
+        }

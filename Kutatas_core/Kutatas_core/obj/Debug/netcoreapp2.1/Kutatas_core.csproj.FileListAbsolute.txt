@@ -100,3 +100,4 @@ E:\KutatasModszertan\Kut_ASP\Kutatas_core\Kutatas_core\obj\Debug\netcoreapp2.1\R
 E:\KutatasModszertan\Kut_ASP\Kutatas_core\Kutatas_core\obj\Debug\netcoreapp2.1\Razor\Views\Admin\Admin.g.cshtml.cs
 E:\KutatasModszertan\Kut_ASP\Kutatas_core\Kutatas_core\obj\Debug\netcoreapp2.1\Razor\Views\Admin\List.g.cshtml.cs
 E:\KutatasModszertan\Kut_ASP\Kutatas_core\Kutatas_core\obj\Debug\netcoreapp2.1\Razor\Views\Admin\Upload.g.cshtml.cs
+E:\KutatasModszertan\Kut_ASP\Kutatas_core\Kutatas_core\obj\Debug\netcoreapp2.1\Razor\Views\Home\Cart.g.cshtml.cs

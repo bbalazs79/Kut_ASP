@@ -3,62 +3,80 @@
 }
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 <body>
+    <header class="container">
+        <nav class="nav">
+            <a asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+            <a asp-area="" asp-controller="Home" asp-action="About">About</a>
+            <a asp-area="" asp-controller="Home" asp-action="Contact">Contact</a>
+            <a asp-area="" asp-controller="Admin" asp-action="Admin" id="admin">Admin</a>
+
+
+
+        </nav>
+        <div class="left-side-container_to_the_signs">
+            <li class="nav-item dropdown leftside">
+                
+                    <a asp-area="" asp-controller="Home" asp-action="Login"> Sign In!</a>
+                
+            </li>
+        </div>
+    </header>
     <main class="container">
-        <div>
-            <section class="registration-container">
 
-                <form method="post" action="/home/login/" id="formid">
-                    <label>
-                        <h1>Registration</h1>
-                    </label>
-                    <div class="form-registration">
-                        <div>
-                            <label for="validationServer01">Email</label>
-                            <input type="email" name="email" class="form-control is-valid" id="email" placeholder="email@email.com" required>
-                        </div>
+        <section class="registration-container">
 
-                        <div>
-                            <label for="validationServer02">Password</label>
-                            <input type="password" name="new-password" class="form-control is-valid" id="password" placeholder="password" required>
-                        </div>
-
-                        <div>
-                            <label for="validationServer02">Confirm Password</label>
-                            <input type="password" name="new-password" class="form-control is-valid" id="password2" placeholder="password" required>
-                            <span id='message'></span>
-                        </div>
-
-                        <div>
-                            <label for="validationServer01">First Name</label>
-                            <input type="text" class="form-control is-valid" id="first_name" placeholder="First Name" required>
-                        </div>
-
-                        <div>
-                            <label for="validationServer01">Last Name</label>
-                            <input type="text" class="form-control is-valid" id="last_name" placeholder="Last Name" required>
-                        </div>
-                        <div>
-                            <label for="validationServer01">City</label>
-                            <input type="text" class="form-control is-valid" id="city" placeholder="City" required>
-                        </div>
-                        <div>
-                            <label for="validationServer01">Phone number</label>
-                            <input type="number" class="form-control is-valid" id="phone" placeholder="example:+36201112242" required>
-                        </div>
-                        <div>
-                            <label for="validationServer01">Address</label>
-                            <input type="text" class="form-control is-valid" id="address" placeholder="Cool str." required>
-                        </div>
-
-
+            <form method="post" action="/home/login/" class="form_user_registration" id="formid">
+                <label>
+                    <h1>Registration</h1>
+                </label>
+                <div class="form-registration">
+                    <div>
+                        <label for="validationServer01">Email</label>
+                        <input type="email" name="email" class="form-control is-valid" id="email" placeholder="email@email.com" required>
                     </div>
-                    <div class="form-button">
-                        <button class="btn" onclick="InsertUser()">Registration</button>
+
+                    <div>
+                        <label for="validationServer02">Password</label>
+                        <input type="password" name="new-password" class="form-control is-valid" id="password" placeholder="password" required>
                     </div>
-                </form>
+
+                    <div>
+                        <label for="validationServer02">Confirm Password</label>
+                        <input type="password" name="new-password" class="form-control is-valid" id="password2" placeholder="password" required>
+                        <span id='message'></span>
+                    </div>
+
+                    <div>
+                        <label for="validationServer01">First Name</label>
+                        <input type="text" class="form-control is-valid" id="first_name" placeholder="First Name" required>
+                    </div>
+
+                    <div>
+                        <label for="validationServer01">Last Name</label>
+                        <input type="text" class="form-control is-valid" id="last_name" placeholder="Last Name" required>
+                    </div>
+                    <div>
+                        <label for="validationServer01">City</label>
+                        <input type="text" class="form-control is-valid" id="city" placeholder="City" required>
+                    </div>
+                    <div>
+                        <label for="validationServer01">Phone number</label>
+                        <input type="number" class="form-control is-valid" id="phone" placeholder="example:+36201112242" required>
+                    </div>
+                    <div>
+                        <label for="validationServer01">Address</label>
+                        <input type="text" class="form-control is-valid" id="address" placeholder="Cool str." required>
+                    </div>
 
 
-            </section>
+                </div>
+                <div class="form-button">
+                    <button class="btn" onclick="InsertUser()">Registration</button>
+                </div>
+            </form>
+
+
+        </section>
 
 
 
@@ -90,11 +108,11 @@
     }
 
     function InsertUser() {
-        SelectUser($('#email').val(), returnData);
-        if (currentEmail != null || currentEmail != "") {
-            alert("This email is already used for another user!");
-        }
-        else {
+        //SelectUser($('#email').val(), returnData);
+        //if (currentEmail != null || currentEmail != "") {
+        //    alert("This email is already used for another user!");
+        //}
+        //else {
             $.post('/User/InsertUser', {
                 firstName: document.getElementById("first_name").value,
                 lastName: document.getElementById("last_name").value,
@@ -109,7 +127,7 @@
                         window.location.reload();
                     }
                 }, 'json');
-        }
+        //}
 
     }
 </script>

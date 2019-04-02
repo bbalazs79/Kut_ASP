@@ -10,7 +10,7 @@
             <a asp-area="" asp-controller="Home" asp-action="About">About</a>
             <a asp-area="" asp-controller="Home" asp-action="Contact">Contact</a>
             <a asp-area="" asp-controller="Admin" asp-action="Admin" id="admin">Admin</a>
-
+            <a asp-area="" asp-controller="Home" asp-action="Cart" id="cart">Cart</a>
 
 
         </nav>
@@ -34,7 +34,13 @@
                     <p>food description</p>
                 </div>
                 <figure class="food_img">
-                    <img src="https://img.buzzfeed.com/thumbnailer-prod-us-east-1/dc23cd051d2249a5903d25faf8eeee4c/BFV36537_CC2017_2IngredintDough4Ways-FB.jpg?output-quality=60&resize=1000:*" />
+                    <img src="https://img.buzzfeed.com/thumbnailer-prod-us-east-1/dc23cd051d2249a5903d25faf8eeee4c/BFV36537_CC2017_2IngredintDough4Ways-FB.jpg?output-quality=60&resize=1000:*"  id="myImg"/>
+                    <i class="fas fa-search-plus"></i>
+                    <div id="myModal" class="modal">
+                        <span class="close">&times;</span>
+                        <img class="modal-content" id="img01">
+                        <div id="caption"></div>
+                    </div>
                 </figure>
                 <div class="cart_logo_container">
                     <i class="fas fa-cart-plus"></i>
@@ -45,3 +51,25 @@
         </section>
     </section>
 </body>
+<script>
+    // Get the modal
+    var modal = document.getElementById('myModal');
+
+    // Get the image and insert it inside the modal - use its "alt" text as a caption
+    var img = document.getElementById('myImg');
+    var modalImg = document.getElementById("img01");
+    var captionText = document.getElementById("caption");
+    img.onclick = function () {
+        modal.style.display = "block";
+        modalImg.src = this.src;
+        captionText.innerHTML = this.alt;
+    }
+
+    // Get the <span> element that closes the modal
+    var span = document.getElementsByClassName("close")[0];
+
+    // When the user clicks on <span> (x), close the modal
+    span.onclick = function () {
+        modal.style.display = "none";
+    }
+</script>

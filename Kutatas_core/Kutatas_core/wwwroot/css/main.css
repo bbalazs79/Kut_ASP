@@ -10,6 +10,7 @@ body {
     background-repeat: no-repeat;
     background-size: cover;
     height: 100vh;
+   
 }
 .registration-container{
    
@@ -17,13 +18,19 @@ body {
 }
 .form-registration {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
+    margin:auto;
+    width: 400px;
     grid-gap: 10px 10px;
 }
-form{
-    width:100%;
-  
+    .form-registration div {
+       
+        width: 100%;
+    }
+.form_user_registration {
+    width: 100%;
 }
+
 .form-button {
     margin: 15px auto;
     display: flex;
@@ -31,9 +38,10 @@ form{
 }
 label, h1{
     color: white;
+    
 }
-label{
+label {
    
-    font-size:18px;
+    font-size: 18px;
 }
 
