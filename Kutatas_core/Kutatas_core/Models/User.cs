@@ -5,11 +5,12 @@ using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Identity;
 
 namespace Kutatas_core.Models
 {
-    public class User
-    {      
+    public class User : IdentityUser
+    {          
         [MinLength(3)]
         [MaxLength(255)]
         [Required]
@@ -19,27 +20,11 @@ namespace Kutatas_core.Models
         [MaxLength(255)]
         [Required]
         public string LastName { get; set; }
-
-        [MinLength(11)]
-        [MaxLength(11)]
-        [Required]
-        public string PhoneNumber { get; set; }
-        
-        [Key]
-        [MinLength(7)]
-        [MaxLength(255)]
-        [Required]
-        public string Email { get; set; }
-        
-        [MinLength(8)]
-        [MaxLength(255)]
-        [Required]
-        public string Password { get; set; }
         
         [Required]
         public string City { get; set; }
 
         [Required]
-        public string Address { get; set; }
+        public string Address { get; set; }      
     }
 }

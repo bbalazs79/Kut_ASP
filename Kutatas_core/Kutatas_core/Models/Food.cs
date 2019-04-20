@@ -12,7 +12,7 @@ namespace Kutatas_core.Models
         public int Id { get; set; }
 
         [Required]
-        public string FoodName { get; set; }
+        public string Name { get; set; }
         [Required]
         public int Price { get; set; }
 

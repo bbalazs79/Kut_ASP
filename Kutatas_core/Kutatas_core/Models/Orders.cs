@@ -10,6 +10,7 @@ namespace Kutatas_core.Models
     {
         [Key]
         public int Id { get; set; }
+        
         [Required]
         public Food OrderedFood { get; set; }
         public User Orderer { get; set; }

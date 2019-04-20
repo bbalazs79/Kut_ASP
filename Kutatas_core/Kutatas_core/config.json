@@ -1,5 +1,0 @@
-{
-  "ConnectionStrings": {
-    "DataAccessMySqlProvider": "server=donfamilia.hu;userid=Kutatas_ASP;password=MarkBalazs96!;database=Kutatas_ASP;"
-  }
-}

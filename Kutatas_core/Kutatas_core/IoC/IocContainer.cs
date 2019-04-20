@@ -9,7 +9,7 @@ namespace Kutatas_core.IoC
 {
     public static class Ioc
     {
-        public static ApplicationDbContext ApplicationDbContext => IocContainer.Provider.GetService<ApplicationDbContext>();
+        // public static ApplicationDbContext ApplicationDbContext => IocContainer.Provider.GetService<ApplicationDbContext>();
     }
     public static class IocContainer
     {

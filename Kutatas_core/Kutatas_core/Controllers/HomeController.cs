@@ -10,16 +10,13 @@ namespace Kutatas_core.Controllers
 {
     public class HomeController : Controller
     {
+        // Ezekkel mindenképpen kezdjetek valamit (az is jobb, ha mindegyikhez külön View és Controller van)
 
-        /// <summary>
-        /// Admin cshtml 
-        /// </summary>
-        /// <returns></returns>
-        
         public IActionResult Registration()
         {
             return View();
         }
+        
         public IActionResult Cart()
         {
             return View();
@@ -53,6 +50,8 @@ namespace Kutatas_core.Controllers
         {
             return View();
         }
+
+       
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()

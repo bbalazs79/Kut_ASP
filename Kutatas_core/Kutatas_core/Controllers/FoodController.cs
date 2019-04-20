@@ -6,12 +6,16 @@ using System.Threading.Tasks;
 using Kutatas_core.Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Kendo.Mvc.UI;
+using Kendo.Mvc.Extensions;
+using Microsoft.AspNetCore.Authorization;
+using Kutatas_core.Data;
 
 namespace Kutatas_core.Controllers
 {
     public class FoodController : Controller
     {
-        private ApplicationDbContext context = new ApplicationDbContext();
+        private readonly ApplicationDbContext dbContext;
 
         /// <summary>
         /// Eltárolja adatbázisba a feltölteni kívánt kajákat
@@ -25,14 +29,14 @@ namespace Kutatas_core.Controllers
             {
                 Food newFood = new Food();
                 newFood.Price = price;
-                newFood.FoodName = name;
+                newFood.Name = name;
 
                 // insert
-                using (context)
+                using (dbContext)
                 {
-                    var customers = context.Set<Food>();
+                    var customers = dbContext.Set<Food>();
                     customers.Add(newFood);
-                    context.SaveChanges();
+                    dbContext.SaveChanges();
                 }
             }
             catch (Exception e)
@@ -73,8 +77,8 @@ namespace Kutatas_core.Controllers
                         }
                     }
 
-                    context.Add(Image);
-                    await context.SaveChangesAsync();
+                    dbContext.Add(Image);
+                    await dbContext.SaveChangesAsync();
 
                     return View();
                 }
@@ -88,27 +92,14 @@ namespace Kutatas_core.Controllers
         }
         #endregion
 
-        /// <summary>
-        /// Visszaadja az adatbázisból az összes ételt amit mentettek
-        /// Listázás miatt kell
-        /// </summary>
-        /// <returns></returns>
-        #region Az összes ételt kilistázza
-        [HttpPost]
-        public ActionResult SelectAllFood()
+        public FoodController(ApplicationDbContext dbContext)
         {
-            try
-            {
-                var result = context.Food;
-                return new JsonResult(result);
-            }
-            catch (Exception e)
-            {
-                return new JsonResult(new { Success = false });
-            }
+            this.dbContext = dbContext;
         }
-        #endregion
 
-
+        public IActionResult Index()
+        {
+            return this.View(this.dbContext.Food);
+        }
     }
 }

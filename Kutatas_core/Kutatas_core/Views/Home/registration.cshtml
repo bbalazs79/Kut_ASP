@@ -25,12 +25,15 @@
 
         <section class="registration-container">
 
+            <!--    Még szerencse, hogy a button nem submit, különben a regisztrációs form loginolni akarna...
+                    Ezt javítsd ki, a login-nál ott van a helyes példa (JS sem kell, felesleges)         -->
             <form method="post" action="/home/login/" class="form_user_registration" id="formid">
                 <label>
                     <h1>Registration</h1>
                 </label>
                 <div class="form-registration">
                     <div>
+                        <!-- Mi ez a validationServer? -->
                         <label for="validationServer01">Email</label>
                         <input type="email" name="email" class="form-control is-valid" id="email" placeholder="email@email.com" required>
                     </div>
@@ -113,7 +116,7 @@
         //    alert("This email is already used for another user!");
         //}
         //else {
-            $.post('/User/InsertUser', {
+        $.post('/User/RegisterUser', {
                 firstName: document.getElementById("first_name").value,
                 lastName: document.getElementById("last_name").value,
                 email: document.getElementById("email").value,
@@ -125,6 +128,7 @@
                 function (data) {
                     if (data.Succeed) {
                         window.location.reload();
+                        window.localStorage.setItem('token', data.token);
                     }
                 }, 'json');
         //}

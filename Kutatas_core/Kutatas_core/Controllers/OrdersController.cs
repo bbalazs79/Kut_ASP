@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Kutatas_core.Data;
 using Kutatas_core.Models;
 using Microsoft.AspNetCore.Mvc;
 
@@ -9,7 +10,12 @@ namespace Kutatas_core.Controllers
 {
     public class OrdersController : Controller
     {
-        private ApplicationDbContext context = new ApplicationDbContext();
+        private ApplicationDbContext dbContext;
+
+        public OrdersController(ApplicationDbContext dbContext)
+        {
+            this.dbContext = dbContext;
+        }
         
         /// <summary>
         /// id alapján megkeresi a rendelést és teljesítettnek veszi a rendelést
@@ -22,15 +28,15 @@ namespace Kutatas_core.Controllers
         {
             try
             {
-                var result = context.Orders.Where(x=>x.Id == id).FirstOrDefault<Orders>();
+                var result = dbContext.Orders.Where(x=>x.Id == id).FirstOrDefault<Orders>();
                 result.Performed = true;
                 result.PerformedDate = DateTime.Now;
 
-                using (context)
+                using (dbContext)
                 {
-                    var customers = context.Set<Orders>();
+                    var customers = dbContext.Set<Orders>();
                     customers.Update(result);
-                    context.SaveChanges();
+                    dbContext.SaveChanges();
                 }
                 return new JsonResult(new { Success = true });
             }
@@ -60,11 +66,11 @@ namespace Kutatas_core.Controllers
                 order.Performed = false;
                 order.OrderDate = DateTime.Now;
 
-                using (context)
+                using (dbContext)
                 {
-                        var customers = context.Set<Orders>();
+                        var customers = dbContext.Set<Orders>();
                         customers.Add(order);
-                        context.SaveChanges();
+                        dbContext.SaveChanges();
                     
                 }
                 return new JsonResult(new { Succeed = true });
@@ -87,7 +93,7 @@ namespace Kutatas_core.Controllers
         {
             try
             {
-                var result = context.Orders;
+                var result = dbContext.Orders;
                 return new JsonResult(result);
             }
             catch (Exception e)
@@ -107,7 +113,7 @@ namespace Kutatas_core.Controllers
         {
             try
             {
-                var result = context.Orders;
+                var result = dbContext.Orders;
                 List<Orders> activeOrders = new List<Orders>();
                 foreach(Orders x in result)
                 {
@@ -135,7 +141,7 @@ namespace Kutatas_core.Controllers
         {
             try
             {
-                var result = context.Orders;
+                var result = dbContext.Orders;
                 List<Orders> inactiveOrders = new List<Orders>();
                 foreach (Orders x in result)
                 {
