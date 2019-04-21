@@ -91,15 +91,16 @@ namespace Kutatas_core.Controllers
             return null;
         }
         #endregion
-
+        
         public FoodController(ApplicationDbContext dbContext)
         {
             this.dbContext = dbContext;
         }
 
+        [AllowAnonymous]
         public IActionResult Index()
         {
-            return this.View(this.dbContext.Food);
+            return this.View(this.dbContext.Food.ToList());
         }
     }
 }

@@ -2,5 +2,7 @@
     ViewData["Title"] = "Privacy Policy";
 }
 <h2>@ViewData["Title"]</h2>
-
+<div id="navigation">
+    @{ Html.RenderPartial("~/Views/Shared/Navigation.cshtml"); }
+</div>
 <p>Use this page to detail your site's privacy policy.</p>

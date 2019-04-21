@@ -5,45 +5,28 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Kutatas_core.Models;
+using Kutatas_core.Data;
 
 namespace Kutatas_core.Controllers
 {
     public class HomeController : Controller
     {
+        private readonly ApplicationDbContext dbContext;
+        
+        public HomeController(ApplicationDbContext dbContext)
+        {
+            this.dbContext = dbContext;
+        }
         // Ezekkel mindenképpen kezdjetek valamit (az is jobb, ha mindegyikhez külön View és Controller van)
 
-        public IActionResult Registration()
-        {
-            return View();
-        }
-        
         public IActionResult Cart()
         {
             return View();
         }
-
-
-        public IActionResult Login()
-        {
-            return View();
-        }
+        
         public IActionResult Index()
         {
-            return View();
-        }
-
-        public IActionResult About()
-        {
-            ViewData["Message"] = "Your application description page.";
-
-            return View();
-        }
-
-        public IActionResult Contact()
-        {
-            ViewData["Message"] = "Your contact page.";
-
-            return View();
+            return View(this.dbContext.Food.ToList());
         }
 
         public IActionResult Privacy()
@@ -51,7 +34,6 @@ namespace Kutatas_core.Controllers
             return View();
         }
 
-       
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()

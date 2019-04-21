@@ -1,32 +1,14 @@
 ﻿@{
     ViewData["Title"] = "Home Page";
 }
-
+@model List<Kutatas_core.Models.Food>
+<div id="navigation">
+    @{ Html.RenderPartial("~/Views/Shared/Navigation.cshtml"); }
+</div>
 
 <body class="container">
-    <header class="container">
-        <nav class="nav">
-            <a asp-area="" asp-controller="Home" asp-action="Index">Home</a>
-            <a asp-area="" asp-controller="Home" asp-action="About">About</a>
-            <a asp-area="" asp-controller="Home" asp-action="Contact">Contact</a>
-            <a asp-area="" asp-controller="Admin" asp-action="Admin" id="admin">Admin</a>
-            <a asp-area="" asp-controller="Home" asp-action="Cart" id="cart">Cart</a>
-
-
-        </nav>
-        <div class="left-side-container_to_the_signs">
-            <li class="nav-item dropdown leftside">
-                <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Sign in/up</a>
-                <div class="dropdown-menu" id="drop">
-                    <a asp-area="" asp-controller="Home" asp-action="Registration" id="Registration">Sign Up!</a>
-                    <a asp-area="" asp-controller="Home" asp-action="Login">Sign In!</a>
-                </div>
-            </li>
-        </div>
-    </header>
-   
     <section class="index_container">
-        
+
         <section class="food_container">
             <div class="food_list">
                 <div class="food_description_container">
@@ -34,7 +16,7 @@
                     <p>food description</p>
                 </div>
                 <figure class="food_img">
-                    <img src="https://img.buzzfeed.com/thumbnailer-prod-us-east-1/dc23cd051d2249a5903d25faf8eeee4c/BFV36537_CC2017_2IngredintDough4Ways-FB.jpg?output-quality=60&resize=1000:*"  id="myImg"/>
+                    <img src="https://img.buzzfeed.com/thumbnailer-prod-us-east-1/dc23cd051d2249a5903d25faf8eeee4c/BFV36537_CC2017_2IngredintDough4Ways-FB.jpg?output-quality=60&resize=1000:*" id="myImg" />
                     <i class="fas fa-search-plus"></i>
                     <div id="myModal" class="modal">
                         <span class="close">&times;</span>
@@ -44,11 +26,42 @@
                 </figure>
                 <div class="cart_logo_container">
                     <i class="fas fa-cart-plus"></i>
-
                 </div>
-
             </div>
         </section>
+
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>
+                        Name
+                    </th>
+                    <th>
+                        Price
+                    </th>
+                    <th>
+                        Image
+                    </th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Name)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Price)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Image)
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
     </section>
 </body>
 <script>

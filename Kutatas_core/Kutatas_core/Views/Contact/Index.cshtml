@@ -1,0 +1,33 @@
+﻿@{
+    ViewData["Title"] = "Contact";
+}
+<main>
+    <div id="navigation">
+        @{ Html.RenderPartial("~/Views/Shared/Navigation.cshtml"); }
+    </div>
+    
+    <section class="contact">
+        <h1>Contact</h1>
+        <hr />
+        <p>Find us at some address at some place or call us at 05050515-122330</p>
+        <p><span>FYI!</span>We offer full-service catering for any event, large or small. We understand your needs and we will cater the food to satisfy the biggerst criteria of them all, both look and taste.</p>
+        <h2>Reserve a table, ask for today's special or just send us a message:</h2>
+        <form>
+            <input type="text" name="firstName" id="firstName" placeholder="FIRST NAME">
+            <input type="text" name="lastName" id="lastName" placeholder="LAST NAME">
+            <input type="number" name="people" id="people" placeholder="HOW MANY PEOPE">
+            <input type="date" name="date" id="date">
+            <input type="text" name="message" id="message" placeholder="MESSAGE\SPECIAL REQUIERS">
+
+            <input type="submit" onclick="Contact()" name="send" value="SEND MESSAGE" id="send">
+        </form>
+
+
+
+    </section>
+
+</main>
+
+
+<script>
+</script>

@@ -13,8 +13,6 @@ E:\KutatasModszertan\Kutatas_core\Kutatas_core\obj\Debug\netcoreapp2.1\Kutatas_c
 E:\KutatasModszertan\Kutatas_core\Kutatas_core\obj\Debug\netcoreapp2.1\Kutatas_core.TagHelpers.input.cache
 E:\KutatasModszertan\Kutatas_core\Kutatas_core\obj\Debug\netcoreapp2.1\Kutatas_core.TagHelpers.output.cache
 E:\KutatasModszertan\Kutatas_core\Kutatas_core\obj\Debug\netcoreapp2.1\Kutatas_core.RazorCoreGenerate.cache
-E:\KutatasModszertan\Kutatas_core\Kutatas_core\obj\Debug\netcoreapp2.1\Razor\Views\Home\About.g.cshtml.cs
-E:\KutatasModszertan\Kutatas_core\Kutatas_core\obj\Debug\netcoreapp2.1\Razor\Views\Home\Contact.g.cshtml.cs
 E:\KutatasModszertan\Kutatas_core\Kutatas_core\obj\Debug\netcoreapp2.1\Razor\Views\Home\Index.g.cshtml.cs
 E:\KutatasModszertan\Kutatas_core\Kutatas_core\obj\Debug\netcoreapp2.1\Razor\Views\Home\Privacy.g.cshtml.cs
 E:\KutatasModszertan\Kutatas_core\Kutatas_core\obj\Debug\netcoreapp2.1\Razor\Views\Shared\Error.g.cshtml.cs
@@ -100,12 +98,7 @@ E:\KutatasModszertan\Kut_ASP\Kutatas_core\Kutatas_core\obj\Debug\netcoreapp2.1\R
 E:\KutatasModszertan\Kut_ASP\Kutatas_core\Kutatas_core\obj\Debug\netcoreapp2.1\Razor\Views\Admin\List.g.cshtml.cs
 E:\KutatasModszertan\Kut_ASP\Kutatas_core\Kutatas_core\obj\Debug\netcoreapp2.1\Razor\Views\Admin\Upload.g.cshtml.cs
 E:\KutatasModszertan\Kut_ASP\Kutatas_core\Kutatas_core\obj\Debug\netcoreapp2.1\Razor\Views\Home\Cart.g.cshtml.cs
-E:\KutatasModszertan\Kutatas_core\Kutatas_core\obj\Debug\netcoreapp2.1\Razor\Views\Admin\Admin.g.cshtml.cs
-E:\KutatasModszertan\Kutatas_core\Kutatas_core\obj\Debug\netcoreapp2.1\Razor\Views\Admin\List.g.cshtml.cs
-E:\KutatasModszertan\Kutatas_core\Kutatas_core\obj\Debug\netcoreapp2.1\Razor\Views\Admin\Upload.g.cshtml.cs
 E:\KutatasModszertan\Kutatas_core\Kutatas_core\obj\Debug\netcoreapp2.1\Razor\Views\Home\Cart.g.cshtml.cs
-E:\KutatasModszertan\Kutatas_core\Kutatas_core\obj\Debug\netcoreapp2.1\Razor\Views\Home\login.g.cshtml.cs
-E:\KutatasModszertan\Kutatas_core\Kutatas_core\obj\Debug\netcoreapp2.1\Razor\Views\Home\registration.g.cshtml.cs
 E:\KutatasModszertan\Kutatas_core\Kutatas_core\obj\Debug\netcoreapp2.1\Razor\Views\Food\Index.g.cshtml.cs
 E:\KutatasModszertan\Kutatas_core\Kutatas_core\obj\Debug\netcoreapp2.1\Kutatas_core.csprojAssemblyReference.cache
 C:\Users\N3r0\Downloads\KutatasModszertan\Kutatas_core\Kutatas_core\bin\Debug\netcoreapp2.1\Kutatas_core.deps.json
@@ -147,3 +140,9 @@ C:\Users\N3r0\Downloads\KutatasModszertan\Kutatas_core\Kutatas_core\obj\Debug\ne
 C:\Users\N3r0\Downloads\KutatasModszertan\Kutatas_core\Kutatas_core\obj\Debug\netcoreapp2.1\Kutatas_core.dll
 C:\Users\N3r0\Downloads\KutatasModszertan\Kutatas_core\Kutatas_core\obj\Debug\netcoreapp2.1\Kutatas_core.pdb
 C:\Users\N3r0\Downloads\KutatasModszertan\Kutatas_core\Kutatas_core\obj\Debug\netcoreapp2.1\Kutatas_core.csproj.CopyComplete
+E:\KutatasModszertan\Kutatas_core\Kutatas_core\obj\Debug\netcoreapp2.1\Razor\Views\About\Index.g.cshtml.cs
+E:\KutatasModszertan\Kutatas_core\Kutatas_core\obj\Debug\netcoreapp2.1\Razor\Views\Contact\Index.g.cshtml.cs
+E:\KutatasModszertan\Kutatas_core\Kutatas_core\obj\Debug\netcoreapp2.1\Razor\Views\login\index.g.cshtml.cs
+E:\KutatasModszertan\Kutatas_core\Kutatas_core\obj\Debug\netcoreapp2.1\Razor\Views\registration\index.g.cshtml.cs
+E:\KutatasModszertan\Kutatas_core\Kutatas_core\obj\Debug\netcoreapp2.1\Razor\Views\Shared\Navigation.g.cshtml.cs
+E:\KutatasModszertan\Kutatas_core\Kutatas_core\obj\Debug\netcoreapp2.1\Razor\Views\Shared\Food.g.cshtml.cs
