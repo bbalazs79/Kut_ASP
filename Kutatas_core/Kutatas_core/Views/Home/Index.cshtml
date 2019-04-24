@@ -3,86 +3,102 @@
 }
 @model List<Kutatas_core.Models.Food>
 <div id="navigation">
-    @{ Html.RenderPartial("~/Views/Shared/Navigation.cshtml"); }
+   @{ Html.RenderPartial("~/Views/Shared/Navigation.cshtml"); }
 </div>
 
 <body class="container">
-    <section class="index_container">
 
-        <section class="food_container">
-            <div class="food_list">
-                <div class="food_description_container">
-                    <h2>food name</h2>
-                    <p>food description</p>
-                </div>
-                <figure class="food_img">
-                    <img src="https://img.buzzfeed.com/thumbnailer-prod-us-east-1/dc23cd051d2249a5903d25faf8eeee4c/BFV36537_CC2017_2IngredintDough4Ways-FB.jpg?output-quality=60&resize=1000:*" id="myImg" />
-                    <i class="fas fa-search-plus"></i>
-                    <div id="myModal" class="modal">
-                        <span class="close">&times;</span>
-                        <img class="modal-content" id="img01">
-                        <div id="caption"></div>
+    <main class="cart">
+        <ul>
+            <li class="listhead">
+
+                <h2>Étel</h2>
+                <h2>Ár</h2>
+                <h2>Kosár</h2>
+
+            </li>
+            @foreach (var item in Model)
+            {
+                <li class="foodelements" >
+                    <div>
+                        <div><h2>@Html.DisplayFor(modelItem => item.Name)</h2></div>
+                        <div>
+                            <p>allergének fdddddddddddddddddddddddddddddddddddddd</p>
+                            
+                            
+                        </div>
                     </div>
-                </figure>
-                <div class="cart_logo_container">
-                    <i class="fas fa-cart-plus"></i>
-                </div>
-            </div>
-        </section>
-
-        <table class="table">
-            <thead>
-                <tr>
-                    <th>
-                        Name
-                    </th>
-                    <th>
-                        Price
-                    </th>
-                    <th>
-                        Image
-                    </th>
-                    <th></th>
-                </tr>
-            </thead>
-            <tbody>
-                @foreach (var item in Model)
-                {
-                    <tr>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.Name)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.Price)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.Image)
-                        </td>
-                    </tr>
-                }
-            </tbody>
-        </table>
-    </section>
+                    <div><h2> @Html.DisplayFor(modelItem => item.Price) Ft</h2> </div>
+                    <div class="cart" onclick="addItem(this)" data-id="@item.Id">+</div>
+                </li>
+            }
+        </ul>
+        <div class="sum"></div>
+    </main>
 </body>
 <script>
-    // Get the modal
-    var modal = document.getElementById('myModal');
+   
+                var cartContent = JSON.parse(sessionStorage.getItem('cart'));
+                var adatb = [];
+                if (cartContent == null) {
+                    var cartContent = [];
+                }
 
-    // Get the image and insert it inside the modal - use its "alt" text as a caption
-    var img = document.getElementById('myImg');
-    var modalImg = document.getElementById("img01");
-    var captionText = document.getElementById("caption");
-    img.onclick = function () {
-        modal.style.display = "block";
-        modalImg.src = this.src;
-        captionText.innerHTML = this.alt;
+                function addItem(item) {
+
+                    var id = item.dataset.id;
+                    var find = false;
+                    var cartItem = {};
+                    for (let index = 0; index < cartContent.length; index++) {
+                        if (cartContent[index].id == id) {
+                            
+                            cartContent[index].Count++;
+                            console.log(cartContent[index]);
+                            find = true;
+                            break;
+                        } else {
+                            find = false;
+
+                        }
+
+
+                    }
+                    if (!find) {
+                        cartItem = {
+                        id: id,
+                Count: 1
+                            }
+
+                        cartContent.push(cartItem);
+                    }
+
+
+                    sessionStorage.setItem('cart', JSON.stringify(cartContent));
+                   // document.querySelector('.sum').innerHTML=`<i class="fas fa-shopping-cart"> </i> $ ${cartTotal(this)}`;
     }
 
-    // Get the <span> element that closes the modal
-    var span = document.getElementsByClassName("close")[0];
 
-    // When the user clicks on <span> (x), close the modal
-    span.onclick = function () {
-        modal.style.display = "none";
-    }
+    
+    function cartTotal(item) {
+
+        var sum = 0;
+         
+
+             for (let index = 0; index < "adatb.count"; index++) {
+
+                 for (let j = 0; j < cartContent.length; j++) {
+                     if (cartContent[j].id == "ide kellene az adatbázisból a kaja id") {
+                         sum += adatb[index].price * cartContent[j].Count;
+                     }
+
+                 }
+             }
+
+             return sum;
+
+
+         }
+
+   
+
 </script>

@@ -159,7 +159,7 @@ namespace Kutatas_core.Controllers
                 return this.Redirect("/Home");
             }
 
-            return this.Redirect("/Home/Login");
+            return this.Redirect("/Login/Index");
         }
 
         [HttpGet]
@@ -175,7 +175,7 @@ namespace Kutatas_core.Controllers
         public async Task<IActionResult> Logout()
         {
             await this.signInManager.SignOutAsync();
-            return this.Redirect("/Home/Login");
+            return this.Redirect("/Home/Index");
         }
 
         public IActionResult Index()
