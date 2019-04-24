@@ -37,17 +37,6 @@
     </main>
 </body>
 <script>
-    $(window).on("load", function() {
-        $.post('/Food/selectAllFood', {},
-                function (data) {
-                    if (data.Succeed) {
-                        for (var i = 0; i < data.length; i++) {
-                            window.localStorage.setItem('Food', data.Foods[i]);
-                        }
-                        
-                    }
-                }, 'json');
-    });
     
     var cartContent = JSON.parse(sessionStorage.getItem('cart'));
     var adatb = [];

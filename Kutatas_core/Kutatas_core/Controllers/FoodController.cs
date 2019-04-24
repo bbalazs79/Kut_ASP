@@ -103,12 +103,6 @@ namespace Kutatas_core.Controllers
             return this.View(this.dbContext.Food.ToList());
         }
 
-        [HttpPost]
-        public ActionResult selectAllFood()
-        {
-            List<Food> AllFood = this.dbContext.Food.ToList();
-            return new JsonResult(new { Foods = AllFood });
-        }
 
     }
 }
