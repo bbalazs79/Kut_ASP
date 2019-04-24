@@ -156,10 +156,10 @@ namespace Kutatas_core.Controllers
             if (result.Succeeded)
             {
                 Response.StatusCode = 200;
-                return this.Redirect("/Home");
+                return this.Redirect("/Home/Index");
             }
 
-            return this.Redirect("/Login/Index");
+            return this.Redirect("/Registration/Index");
         }
 
         [HttpGet]

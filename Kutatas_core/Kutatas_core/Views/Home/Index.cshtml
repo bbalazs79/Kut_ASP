@@ -3,7 +3,7 @@
 }
 @model List<Kutatas_core.Models.Food>
 <div id="navigation">
-   @{ Html.RenderPartial("~/Views/Shared/Navigation.cshtml"); }
+    @{ Html.RenderPartial("~/Views/Shared/Navigation.cshtml"); }
 </div>
 
 <body class="container">
@@ -19,13 +19,13 @@
             </li>
             @foreach (var item in Model)
             {
-                <li class="foodelements" >
+                <li class="foodelements">
                     <div>
                         <div><h2>@Html.DisplayFor(modelItem => item.Name)</h2></div>
                         <div>
                             <p>allergének fdddddddddddddddddddddddddddddddddddddd</p>
-                            
-                            
+
+
                         </div>
                     </div>
                     <div><h2> @Html.DisplayFor(modelItem => item.Price) Ft</h2> </div>
@@ -37,68 +37,78 @@
     </main>
 </body>
 <script>
-   
-                var cartContent = JSON.parse(sessionStorage.getItem('cart'));
-                var adatb = [];
-                if (cartContent == null) {
-                    var cartContent = [];
-                }
-
-                function addItem(item) {
-
-                    var id = item.dataset.id;
-                    var find = false;
-                    var cartItem = {};
-                    for (let index = 0; index < cartContent.length; index++) {
-                        if (cartContent[index].id == id) {
-                            
-                            cartContent[index].Count++;
-                            console.log(cartContent[index]);
-                            find = true;
-                            break;
-                        } else {
-                            find = false;
-
+    $(window).on("load", function() {
+        $.post('/Food/selectAllFood', {},
+                function (data) {
+                    if (data.Succeed) {
+                        for (var i = 0; i < data.length; i++) {
+                            window.localStorage.setItem('Food', data.Foods[i]);
                         }
-
-
+                        
                     }
-                    if (!find) {
-                        cartItem = {
-                        id: id,
+                }, 'json');
+    });
+    
+    var cartContent = JSON.parse(sessionStorage.getItem('cart'));
+    var adatb = [];
+    if (cartContent == null) {
+        var cartContent = [];
+    }
+
+    function addItem(item) {
+
+        var id = item.dataset.id;
+        var find = false;
+        var cartItem = {};
+        for (let index = 0; index < cartContent.length; index++) {
+            if (cartContent[index].id == id) {
+
+                cartContent[index].Count++;
+                console.log(cartContent[index]);
+                find = true;
+                break;
+            } else {
+                find = false;
+
+            }
+
+
+        }
+        if (!find) {
+            cartItem = {
+                id: id,
                 Count: 1
-                            }
+            }
 
-                        cartContent.push(cartItem);
-                    }
+            cartContent.push(cartItem);
+        }
 
 
-                    sessionStorage.setItem('cart', JSON.stringify(cartContent));
-                   // document.querySelector('.sum').innerHTML=`<i class="fas fa-shopping-cart"> </i> $ ${cartTotal(this)}`;
+        sessionStorage.setItem('cart', JSON.stringify(cartContent));
+        // document.querySelector('.sum').innerHTML=`<i class="fas fa-shopping-cart"> </i> $ ${cartTotal(this)}`;
     }
 
 
-    
+
     function cartTotal(item) {
 
         var sum = 0;
-         
-
-             for (let index = 0; index < "adatb.count"; index++) {
-
-                 for (let j = 0; j < cartContent.length; j++) {
-                     if (cartContent[j].id == "ide kellene az adatbázisból a kaja id") {
-                         sum += adatb[index].price * cartContent[j].Count;
-                     }
-
-                 }
-             }
-
-             return sum;
 
 
-         }
+        for (let index = 0; index < "adatb.count"; index++) {
 
-   
+            for (let j = 0; j < cartContent.length; j++) {
+                if (cartContent[j].id == "ide kellene az adatbázisból a kaja id") {
+                    sum += adatb[index].price * cartContent[j].Count;
+                }
+
+            }
+        }
+
+        return sum;
+    }
+
+    
+
 
 </script>

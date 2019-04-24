@@ -1,0 +1,97 @@
+{
+  "format": 1,
+  "restore": {
+    "E:\\KutatasModszertan\\Kutatas_core\\Kutatas_core\\Kutatas_core.csproj": {}
+  },
+  "projects": {
+    "E:\\KutatasModszertan\\Kutatas_core\\Kutatas_core\\Kutatas_core.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "E:\\KutatasModszertan\\Kutatas_core\\Kutatas_core\\Kutatas_core.csproj",
+        "projectName": "Kutatas_core",
+        "projectPath": "E:\\KutatasModszertan\\Kutatas_core\\Kutatas_core\\Kutatas_core.csproj",
+        "packagesPath": "C:\\Users\\Gadriel\\.nuget\\packages\\",
+        "outputPath": "E:\\KutatasModszertan\\Kutatas_core\\Kutatas_core\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\Gadriel\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp2.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp2.1": {
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp2.1": {
+          "dependencies": {
+            "KendoUICore": {
+              "target": "Package",
+              "version": "[2019.1.220, )"
+            },
+            "Microsoft.AspNetCore.App": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.1.1, )",
+              "autoReferenced": true
+            },
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[2.1.8, )"
+            },
+            "Microsoft.EntityFrameworkCore.Abstractions": {
+              "target": "Package",
+              "version": "[2.1.8, )"
+            },
+            "Microsoft.NETCore.App": {
+              "target": "Package",
+              "version": "[2.1.0, )",
+              "autoReferenced": true
+            },
+            "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
+              "target": "Package",
+              "version": "[2.1.1, )"
+            },
+            "Pomelo.EntityFrameworkCore.MySql": {
+              "target": "Package",
+              "version": "[2.1.4, )"
+            },
+            "Salar.kendoHelpers": {
+              "target": "Package",
+              "version": "[1.4.0, )"
+            },
+            "Telerik.UI.for.AspNet.Core.Trial": {
+              "target": "Package",
+              "version": "[2018.3.911, )"
+            },
+            "WisdomCloud.KendoUI": {
+              "target": "Package",
+              "version": "[2.10.2, )"
+            }
+          },
+          "imports": [
+            "net461"
+          ],
+          "assetTargetFallback": true,
+          "warn": true
+        }
+      }
+    }
+  }
+}
