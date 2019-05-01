@@ -13,10 +13,10 @@
         <section class="registration-container">
 
             <!--    Még szerencse, hogy a button nem submit, különben a regisztrációs form loginolni akarna...
-                    Ezt javítsd ki, a login-nál ott van a helyes példa (JS sem kell, felesleges)         -->
-            <form method="post" action="/home/login/" class="form_user_registration" id="formid">
+            Ezt javítsd ki, a login-nál ott van a helyes példa (JS sem kell, felesleges)         -->
+            <form method="post" name="form1" action="/home/login/" class="form_user_registration" id="formid">
                 <label>
-                    <h1>Registration</h1>
+                    <h1>Regisztráció </h1>
                 </label>
                 <div class="form-registration">
                     <div>
@@ -25,16 +25,31 @@
                         <input type="email" name="email" class="form-control is-valid" id="email" placeholder="email@email.com" required>
                     </div>
 
-                    <div>
-                        <label for="validationServer02">Password</label>
-                        <input type="password" name="new-password" class="form-control is-valid" id="password" placeholder="password" required>
-                    </div>
+
 
                     <div>
-                        <label for="validationServer02">Confirm Password</label>
-                        <input type="password" name="new-password" class="form-control is-valid" id="password2" placeholder="password" required>
-                        <span id='message'></span>
+                        <label for="password">Password</label>
+                        <input type="password" name="password" class="form-control is-valid" id="password" placeholder="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" required>
                     </div>
+                    <span id='message'></span>
+                    <div  id="messages">
+                        <h4 >Password must contain the following:</h4>
+                        <p id="letter"  class="invalid">A <b>lowercase</b> letter</p>
+                        <p id="capital" class="invalid">A <b>capital (uppercase)</b> letter</p>
+                        <p id="number" class="invalid">A <b>number</b></p>
+                        <p id="length" class="invalid">Minimum <b>6 characters</b></p>
+                        <p id="special" class="invalid">A <b>speciális karakter(.-_?!)</b></p>
+                    </div>
+                    <div>
+                        <label for="psw">Confirm Password</label>
+                        <input type="password" name="new-password" class="form-control is-valid" id="password2" placeholder="password" required>
+
+                    </div>
+
+
+
+
+
 
                     <div>
                         <label for="validationServer01">First Name</label>
@@ -61,10 +76,10 @@
 
                 </div>
                 <div class="form-button">
-                    <button class="btn" onclick="InsertUser()">Registration</button>
+                    <button class="btn" id="insertBtn" onclick="InsertUser()" >Registration</button>
                 </div>
             </form>
-
+           
 
         </section>
 
@@ -73,14 +88,119 @@
     </main>
 </body>
 <script>
+    var passMatch = false;
     $('#password, #password2').on('keyup', function () {
-        if ($('#password').val() == $('#password2').val()) {
+        if ($('#password').val() == $('#password2').val() && $('#password').val() !=null) {
             $('#message').html('Matching').css('color', 'green');
+            $('#message').html('Matching').css('font-size', '16px');
             $('#password').html('').css('background-color', 'lightgreen');
+            passMatch = true;
         } else
             $('#message').html('Not Matching').css('color', 'red');
+        passMath = false;
 
     });
+
+    
+
+    //password validation 
+
+    var myInput = document.getElementById("password");
+    var letter = document.getElementById("letter");
+    var capital = document.getElementById("capital");
+    var number = document.getElementById("number");
+    var length = document.getElementById("length");
+    var special = document.getElementById("special");
+    document.getElementById("messages").style.display = "none";
+    
+
+    // When the user clicks on the password field, show the message box
+    myInput.onfocus = function () {
+        document.getElementById("messages").style.display = "block";
+        document.getElementById("messages").style.backgroundColor = "lightgray";
+        document.getElementById("messages").style.opacity = 0.5;
+       
+    }
+    // When the user clicks outside of the password field, hide the message box
+    myInput.onblur = function () {
+        document.getElementById("messages").style.display = "none";
+    }
+
+    ;
+    // When the user starts to type something inside the password field
+    myInput.onkeyup = function () {
+        
+        // Validate lowercase letters
+        var islower = false;
+        var lowerCaseLetters = /[a-z]/g;
+        if (myInput.value.match(lowerCaseLetters)) {
+            letter.classList.remove("invalid");
+            letter.classList.add("valid");
+            islower = true;
+        } else {
+            letter.classList.remove("valid");
+            letter.classList.add("invalid");
+            islower = false;
+        }
+        
+        //Validate special char
+        var isSpec = false;
+        var spec = /[.\\-\\_\\?\\!]/g;
+        if (myInput.value.match(spec)) {
+            special.classList.remove("invalid");
+            special.classList.add("valid");
+            isSpec = true;
+        } else {
+            special.classList.remove("valid");
+            special.classList.add("invalid");
+            isSpec = false;
+        }
+
+
+        // Validate capital letters
+        var isUpper = false;
+        var upperCaseLetters = /[A-Z]/g;
+        if (myInput.value.match(upperCaseLetters)) {
+            capital.classList.remove("invalid");
+            capital.classList.add("valid");
+            isUpper = true;
+        } else {
+            capital.classList.remove("valid");
+            capital.classList.add("invalid");
+            isUpper = false;
+        }
+
+        // Validate numbers
+        var isNum = false;
+        var numbers = /[0-9]/g;
+        if (myInput.value.match(numbers)) {
+            number.classList.remove("invalid");
+            number.classList.add("valid");
+            isNum = true;
+        } else {
+            number.classList.remove("valid");
+            number.classList.add("invalid");
+            isNum = false;
+        }
+
+        // Validate length
+        var isLength = false;
+        if (myInput.value.length >= 6) {
+            length.classList.remove("invalid");
+            length.classList.add("valid");
+            isLength = true;
+        } else {
+            length.classList.remove("valid");
+            length.classList.add("invalid");
+            isLength = false;
+        }
+        console.log(isLength, islower, isNum, isSpec, isUpper);
+        
+       
+    }
+    
+    
+
     /*user: email/ password/firstname / lastname/ city/ phone number/ address */
 
     var currentEmail;
@@ -121,4 +241,6 @@
         //}
 
     }
+
+   
 </script>

@@ -1,0 +1,33 @@
+﻿body {
+}
+.cartlist {
+   
+    list-style-type: none;
+}
+.orderedfoods {
+    display: flex;
+    justify-content: space-around;
+    color: white;
+    background-color: lightgray;
+    width: 100%;
+    text-align: center;
+    margin: 5px 0px;
+  
+}
+.orderedfoods div{
+    width:100%;
+    
+}
+.orderedfonts{
+    color:black!important;
+
+}
+.ordered {
+    display: flex;
+    justify-content: space-around;
+    color: white;
+    background-color: lightgray;
+    width: 100%;
+    text-align: center;
+    margin: 5px 0px;
+}

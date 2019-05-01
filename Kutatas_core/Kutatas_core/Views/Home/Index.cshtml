@@ -2,6 +2,7 @@
     ViewData["Title"] = "Home Page";
 }
 @model List<Kutatas_core.Models.Food>
+
 <div id="navigation">
     @{ Html.RenderPartial("~/Views/Shared/Navigation.cshtml"); }
 </div>
@@ -17,6 +18,7 @@
                 <h2>Kosár</h2>
 
             </li>
+
             @foreach (var item in Model)
             {
                 <li class="foodelements">
@@ -29,7 +31,8 @@
                         </div>
                     </div>
                     <div><h2> @Html.DisplayFor(modelItem => item.Price) Ft</h2> </div>
-                    <div class="cart" onclick="addItem(this)" data-id="@item.Id">+</div>
+
+                    <div class="cart" onclick="addItem(this)" data-id="@item.Id"><i class="fas fa-shopping-cart"> </i></div>
                 </li>
             }
         </ul>
@@ -37,7 +40,9 @@
     </main>
 </body>
 <script>
-    
+
+
+
     var cartContent = JSON.parse(sessionStorage.getItem('cart'));
     var adatb = [];
     if (cartContent == null) {
@@ -46,14 +51,19 @@
 
     function addItem(item) {
 
-        var id = item.dataset.id;
+        var id = Number(item.dataset.id);
+        
         var find = false;
         var cartItem = {};
-        for (let index = 0; index < cartContent.length; index++) {
+        for (var index = 0; index < cartContent.length; index++) {
             if (cartContent[index].id == id) {
 
                 cartContent[index].Count++;
-                console.log(cartContent[index]);
+                cartContent[index].Name = adatb[index].name;
+                cartContent[index].Price = adatb[index].price;
+                console.log(cartContent);
+
+
                 find = true;
                 break;
             } else {
@@ -63,41 +73,74 @@
 
 
         }
+       
         if (!find) {
             cartItem = {
-                id: id,
-                Count: 1
-            }
 
+                id: id,
+                Count: 1,
+                Name: "",
+                Price: ""
+
+            }
             cartContent.push(cartItem);
+            
         }
 
-
+    
         sessionStorage.setItem('cart', JSON.stringify(cartContent));
-        // document.querySelector('.sum').innerHTML=`<i class="fas fa-shopping-cart"> </i> $ ${cartTotal(this)}`;
+        document.querySelector('.sum').innerHTML = `<i class="fas fa-shopping-cart"> </i> $ ${cartTotal()}`;
+
     }
 
 
 
-    function cartTotal(item) {
 
+    function cartTotal() {
         var sum = 0;
 
+        for (var index = 0; index < adatb.length; index++) {
 
-        for (let index = 0; index < "adatb.count"; index++) {
+            for (var j = 0; j < cartContent.length; j++) {
 
-            for (let j = 0; j < cartContent.length; j++) {
-                if (cartContent[j].id == "ide kellene az adatbázisból a kaja id") {
+                if (cartContent[j].id == adatb[index].id) {
+                   
                     sum += adatb[index].price * cartContent[j].Count;
+
                 }
 
             }
         }
-
+        
+       // console.log(sessionStorage.getItem(cart));
+        
         return sum;
     }
 
+
+    var adatb;
     
 
 
 </script>
+@foreach (var item in Model)
+{
+
+
+    <script>
+
+        var items = [];
+        
+        
+        items = { id: @item.Id, name:'@item.Name', price: @item.Price };
+     
+if (adatb == null) {
+    var adatb = [];
+    }
+        
+        adatb.push(items);
+        //sessionStorage.setItem(cartContent,adatb);
+       
+    </script>
+
+}

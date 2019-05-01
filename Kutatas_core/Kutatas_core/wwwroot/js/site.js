@@ -3,6 +3,8 @@
 
 // Write your JavaScript code.
 
+   
 function beforeSendBearer(xhr) {
     xhr.setRequestHeader('Authorization', 'Bearer ' + window.localStorage.getItem('token'));
 }
+
