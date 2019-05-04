@@ -49,48 +49,39 @@
         var cartContent = [];
     }
 
-    function addItem(item) {
 
-        var id = Number(item.dataset.id);
+    var name;
+    var price;
+    var count=1;
+   
+    var Item = function (id, name, price, count) {
+        this.id = id;
+        this.name = name;
+        this.price = price;
+        this.count = count;
+    }
+    function addItemToCart(id, name, price, count) {
+        for (var i in cartContent) {
+            if (cartContent[i].name === name) {
+                cartContent[i].count++;
+                return;
+            }
+        }
+        var item = new Item(id, name, price, count);
+
+        cartContent.push(item);
         
-        var find = false;
-        var cartItem = {};
-        for (var index = 0; index < cartContent.length; index++) {
-            if (cartContent[index].id == id) {
-
-                cartContent[index].Count++;
-                cartContent[index].Name = adatb[index].name;
-                cartContent[index].Price = adatb[index].price;
-                console.log(cartContent);
-
-
-                find = true;
-                break;
-            } else {
-                find = false;
-
+    }
+    function addItem(item) {
+        var id = item.dataset.id;
+        for (var i = 0; i < adatb.length; i++) {
+            if (id == adatb[i].id) {
+                addItemToCart(adatb[i].id, adatb[i].name, adatb[i].price, Number(count));
+                sessionStorage.setItem('cart', JSON.stringify(cartContent));
+                /*szum*/ //document.querySelector('.sum').innerHTML = `<i class="fas fa-shopping-cart"> </i> $ ${cartTotal()}`;
             }
 
-
         }
-       
-        if (!find) {
-            cartItem = {
-
-                id: id,
-                Count: 1,
-                Name: "",
-                Price: ""
-
-            }
-            cartContent.push(cartItem);
-            
-        }
-
-    
-        sessionStorage.setItem('cart', JSON.stringify(cartContent));
-        document.querySelector('.sum').innerHTML = `<i class="fas fa-shopping-cart"> </i> $ ${cartTotal()}`;
-
     }
 
 
@@ -98,20 +89,13 @@
 
     function cartTotal() {
         var sum = 0;
-
         for (var index = 0; index < adatb.length; index++) {
-
             for (var j = 0; j < cartContent.length; j++) {
-
-                if (cartContent[j].id == adatb[index].id) {
-                   
-                    sum += adatb[index].price * cartContent[j].Count;
-
+                if (cartContent[j].id == adatb[index].id) {  
+                    sum += adatb[index].price * cartContent[j].count;
                 }
-
             }
         }
-        
        // console.log(sessionStorage.getItem(cart));
         
         return sum;
@@ -119,9 +103,7 @@
 
 
     var adatb;
-    
-
-
+ 
 </script>
 @foreach (var item in Model)
 {
@@ -130,8 +112,7 @@
     <script>
 
         var items = [];
-        
-        
+
         items = { id: @item.Id, name:'@item.Name', price: @item.Price };
      
 if (adatb == null) {

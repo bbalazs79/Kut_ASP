@@ -22,7 +22,7 @@
     
     
     var cartContent = JSON.parse(sessionStorage.getItem(cart.id));
-    //console.log(cartContent);
+    console.log(cartContent);
     if (cartContent == null) {
          cartContent = [];
     }
@@ -33,10 +33,10 @@
 
         document.querySelector('.cartlist').innerHTML += `
         <div class="orderedfoods">
-        <div> <h2>${cartContent[j].Name}</h2></div>
-        <div><h2>${cartContent[j].Count} db</h2></div>
-        <div> <h2> ${cartContent[j].Price} Ft </h2> </div>
-        <div><h2> ${cartContent[j].Count * cartContent[j].Price} Ft </h2></div>
+        <div> <h2>${cartContent[j].name}</h2></div>
+        <div><h2>${cartContent[j].count} db</h2></div>
+        <div> <h2> ${cartContent[j].price} Ft </h2> </div>
+        <div><h2> ${cartContent[j].count * cartContent[j].price} Ft </h2></div>
         <div>
         <div class="btn btn-info" onclick="subItem(this)" data-id="${(cartContent[j].id)}"><i class="fas fa-minus"></i></div>
         <div class="btn btn-succes" onclick="addItem(this)" data-id="${(cartContent[j].id)}"><i class="fas fa-plus"></i></div>
@@ -63,7 +63,7 @@
             
             if (cartContent[j].id == item.dataset.id) {
                 
-                cartContent[j].Count++;
+                cartContent[j].count++;
                 sessionStorage.setItem('cart', JSON.stringify(cartContent));
                 deleteLis(item);
                 list();
@@ -78,26 +78,10 @@
 
     
 
-    /*function reFresh(item, i) {
-        item.closest('.cartlist').innerHTML = `
-        <div class="orderedfoods">
-        <div> <h2>${cartContent[i].Name}</h2></div>
-        <div><h2>${cartContent[i].Count} db</h2></div>
-        <div> <h2> ${cartContent[i].Price} Ft </h2> </div>
-        <div> <h2> ${cartContent[i].Price} Ft </h2> </div>
-        <div><h2> ${cartContent[i].Count * cartContent[i].Price} Ft </h2></div>
-        <div>
-        <div class="btn btn-info" onclick="subItem(this)" data-id="${(cartContent[i].id)}"><i class="fas fa-minus"></i></div>
-        <div class="btn btn-succes" onclick="addItem(this)" data-id="${(cartContent[i].id)}"><i class="fas fa-plus"></i></div>
-        <div class="btn btn-danger" onclick="deleteItem(this)" data-id="${(cartContent[i].id)}"><i class="fas fa-trash-alt"></i></div>
-         </div>
-        </div>`;
-    }
-    */
     function subItem(item) {
         for (let i = 0; i < cartContent.length; i++) {
-            if (cartContent[i].id == item.dataset.id && cartContent[i].Count > 1) {
-                cartContent[i].Count--;
+            if (cartContent[i].id == item.dataset.id && cartContent[i].count > 1) {
+                cartContent[i].count--;
                 sessionStorage.setItem('cart', JSON.stringify(cartContent));
                 for (var j = 0; j < cartContent.length; j++) {
                     if (cartContent[j].id == item.dataset.id) {
@@ -117,7 +101,7 @@
         for (let i = 0; i < cartContent.length; i++) {
             if (cartContent[i].id == item.dataset.id) {
                 /* kliensoldalon  0zuk a változót */
-                cartContent[i].Count = 0;
+                cartContent[i].count = 0;
 
                 cartContent.splice(i, 1);
                 /*  töröljük a DOM elemet   */

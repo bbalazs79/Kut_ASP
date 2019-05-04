@@ -72,7 +72,7 @@ using Kutatas_core.Models;
             WriteLiteral("\r\n<header class=\"container\">\r\n    <nav class=\"nav\">\r\n        ");
             EndContext();
             BeginContext(109, 64, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "30e8447d73f247169a61ef202d0cc61d", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "9c5f43e6c31b4b75a56861ba91891c5b", async() => {
                 BeginContext(165, 4, true);
                 WriteLiteral("Home");
                 EndContext();
@@ -98,7 +98,7 @@ using Kutatas_core.Models;
             WriteLiteral("\r\n        ");
             EndContext();
             BeginContext(183, 66, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "713f84b051d84e79ada35a701e4d7037", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "988afa667a4740d18e48d976a3d44254", async() => {
                 BeginContext(240, 5, true);
                 WriteLiteral("About");
                 EndContext();
@@ -124,7 +124,7 @@ using Kutatas_core.Models;
             WriteLiteral("\r\n        ");
             EndContext();
             BeginContext(259, 70, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "32b0a30ed7a6493bbbc9fd7fdb8a0659", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "cf7bb90d40724fa199784c0545b73f2c", async() => {
                 BeginContext(318, 7, true);
                 WriteLiteral("Contact");
                 EndContext();
@@ -150,7 +150,7 @@ using Kutatas_core.Models;
             WriteLiteral("\r\n        ");
             EndContext();
             BeginContext(339, 73, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "7041082bd13744ec90becdc25a2ab3c5", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "9d760c2d51004f098ebf15e88b9d2d03", async() => {
                 BeginContext(404, 4, true);
                 WriteLiteral("Cart");
                 EndContext();
@@ -185,7 +185,7 @@ using Kutatas_core.Models;
                 ");
             EndContext();
             BeginContext(751, 94, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "1a6ddb4a52004859915c842c12f9fbb6", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "9a1738c002024d648609a1c37cec3361", async() => {
                 BeginContext(833, 8, true);
                 WriteLiteral("Sign Up!");
                 EndContext();
@@ -212,7 +212,7 @@ using Kutatas_core.Models;
             WriteLiteral("\r\n                ");
             EndContext();
             BeginContext(863, 70, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "36ae3dfdf52f4e2987a24f1affe385fb", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "13bf8d952d444da9a62fcc22eaf9015b", async() => {
                 BeginContext(920, 9, true);
                 WriteLiteral(" Sign In!");
                 EndContext();

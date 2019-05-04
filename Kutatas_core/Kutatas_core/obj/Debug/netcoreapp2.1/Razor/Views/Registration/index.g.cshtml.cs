@@ -74,7 +74,7 @@ using Kutatas_core.Models;
             WriteLiteral("</div>\r\n\r\n");
             EndContext();
             BeginContext(244, 3772, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("body", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "1b898555e7274c2ba54433a4db688646", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("body", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "a3b7f29609d1402e9515c524dc08cf74", async() => {
                 BeginContext(250, 312, true);
                 WriteLiteral(@"
     <main class=""container"">
@@ -86,7 +86,7 @@ using Kutatas_core.Models;
             ");
                 EndContext();
                 BeginContext(562, 3391, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "adcbc52b41704c0ebbcc20302c8f882a", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "2de83f41ce464c4eb43d58f094516b98", async() => {
                     BeginContext(660, 3286, true);
                     WriteLiteral(@"
                 <label>
