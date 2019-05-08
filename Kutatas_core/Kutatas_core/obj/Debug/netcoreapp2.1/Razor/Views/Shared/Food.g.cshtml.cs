@@ -120,7 +120,7 @@ using Kutatas_core.Models;
             WriteLiteral("\r\n                </td>\r\n                <td>\r\n                    ");
             EndContext();
             BeginContext(809, 55, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "5b6b9b2a69554173915b38ef0cd090a9", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "f876d25da5d7406a9231d6f2fb94ad14", async() => {
                 BeginContext(856, 4, true);
                 WriteLiteral("Edit");
                 EndContext();
@@ -155,7 +155,7 @@ using Kutatas_core.Models;
             WriteLiteral("\r\n                    ");
             EndContext();
             BeginContext(886, 60, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "ad3fa557a907448a9b0798509ec27fad", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "516f10d27e624aa183e0574a38cc9154", async() => {
                 BeginContext(936, 6, true);
                 WriteLiteral("Delete");
                 EndContext();

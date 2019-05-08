@@ -1,0 +1,48 @@
+﻿<div id="navigation">
+
+    @{ Html.RenderPartial("~/Views/Shared/Admin_Navigation.cshtml"); }
+
+</div>
+<body>
+    <main class="container">
+        
+        <form class="upload_form">
+
+
+            <label for="foodname">Étel neve</label>
+            <input type="text" name="foodname" placeholder="étel neve" />
+
+            <label for="fooddescription">Étel leírás</label>
+            <input type="text" name="fooddescription" placeholder="allergének, alapanyagok stb..." />
+
+            <label for="foodprice">Étel ára</label>
+            <input type="text" name="foodprice" placeholder="Az árak tartalmazzák az adót!" />
+
+            <input type="submit" name="upload" id="upload_Subimt" onclick="uploadfood()" />
+
+        </form>
+
+
+    </main>
+</body>
+<style>
+    .upload_form {
+        display: flex;
+        flex-wrap: wrap;
+        width: 100%;
+        padding:50px 50px;  
+    }
+    .upload_form input{
+        width:100%;
+    }
+</style>
+<script>
+
+    function uploadfood() {
+
+
+        return console.log("elküld");
+    }
+
+
+</script>

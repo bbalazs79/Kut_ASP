@@ -27,6 +27,20 @@
               asp-fallback-test-class="sr-only" asp-fallback-test-property="position" asp-fallback-test-value="absolute" />
         <link rel="stylesheet" href="~/css/site.min.css" asp-append-version="true" />
     </environment>
+    @if (User.Identity.IsAuthenticated)
+    {
+        var UserRoles = "";
+        if (User.IsInRole("Admin"))
+        {
+            UserRoles = "Admin";
+        }
+        else
+        {
+            UserRoles = "Manager";
+
+        }
+
+    }
 </head>
 <body>
     
@@ -36,6 +50,7 @@
     <main>
         @RenderBody()
 
+       
 
 
 
