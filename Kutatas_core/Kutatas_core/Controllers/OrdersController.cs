@@ -16,7 +16,7 @@ namespace Kutatas_core.Controllers
         {
             this.dbContext = dbContext;
         }
-        
+
         /// <summary>
         /// id alapján megkeresi a rendelést és teljesítettnek veszi a rendelést
         /// </summary>
@@ -28,7 +28,7 @@ namespace Kutatas_core.Controllers
         {
             try
             {
-                var result = dbContext.Orders.Where(x=>x.Id == id).FirstOrDefault<Orders>();
+                var result = dbContext.Orders.Where(x => x.Id == id).FirstOrDefault<Orders>();
                 result.Performed = true;
                 result.PerformedDate = DateTime.Now;
 
@@ -56,22 +56,39 @@ namespace Kutatas_core.Controllers
         /// <returns></returns>
         #region Menti a felhasználó rendelését az adatbázisba
         [HttpPost]
-        public ActionResult InsertOrder(Food food, User orderer, int allPrice)
+        public ActionResult InsertOrder(List<Food> food, string ordererFisrtName, string ordererLastName, string ordererCity, string ordererAddress, string ordererPhoneNumber, int allPrice)
         {
             try
             {
-                Orders order = new Orders();
-                order.OrderedFood = food;
-                order.Orderer = orderer;
-                order.Performed = false;
-                order.OrderDate = DateTime.Now;
-
-                using (dbContext)
+                List<int> foodId = new List<int>();
+                List<int> foodCount = new List<int>();
+                foreach (Food x in food)
                 {
-                        var customers = dbContext.Set<Orders>();
-                        customers.Add(order);
-                        dbContext.SaveChanges();
-                    
+                    foodId.Add(x.Id);
+                    foodCount.Add(x.Count);
+                }
+                int LastOrderCount = 1;
+                LastOrderCount = dbContext.Orders.Last().OrderedId;
+                LastOrderCount = LastOrderCount + 1;
+                Orders order = new Orders();
+
+                for (int i = 0; i < foodId.Count; i++)
+                {
+                    order.OrderedId = LastOrderCount;
+                    order.OrderedFoodId = foodId[i];
+                    order.OrderFoodCount = foodCount[i];
+                    order.OrdererFirstName = ordererFisrtName;
+                    order.OrdererLastName = ordererLastName;
+                    order.OrdererPhoneNumber = ordererPhoneNumber;
+                    order.OrdererCity = ordererCity;
+                    order.OrdererAddress = ordererAddress;
+                    order.Performed = false;
+                    order.OrderDate = DateTime.Now;
+
+                    var customers = dbContext.Set<Orders>();
+                    customers.Add(order);
+                    dbContext.SaveChanges();
+
                 }
                 return new JsonResult(new { Succeed = true });
             }
@@ -115,9 +132,9 @@ namespace Kutatas_core.Controllers
             {
                 var result = dbContext.Orders;
                 List<Orders> activeOrders = new List<Orders>();
-                foreach(Orders x in result)
+                foreach (Orders x in result)
                 {
-                    if(x.Performed == true)
+                    if (x.Performed == true)
                     {
                         activeOrders.Add(x);
                     }

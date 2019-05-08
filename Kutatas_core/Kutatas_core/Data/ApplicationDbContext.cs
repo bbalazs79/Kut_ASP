@@ -9,6 +9,8 @@ namespace Kutatas_core.Data
         public DbSet<Orders> Orders { get; set; }
         public DbSet<Food> Food { get; set; }
 
+        //public DbSet<OrderCount> OrderCount { get; set; }
+
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
             : base(options) { }
     }

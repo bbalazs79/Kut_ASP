@@ -147,3 +147,5 @@ E:\KutatasModszertan\Kut_ASP\Kutatas_core\Kutatas_core\obj\Debug\netcoreapp2.1\R
 E:\KutatasModszertan\Kut_ASP\Kutatas_core\Kutatas_core\obj\Debug\netcoreapp2.1\Razor\Views\Shared\Food.g.cshtml.cs
 E:\KutatasModszertan\Kut_ASP\Kutatas_core\Kutatas_core\obj\Debug\netcoreapp2.1\Razor\Views\Shared\Navigation.g.cshtml.cs
 E:\KutatasModszertan\Kut_ASP\Kutatas_core\Kutatas_core\obj\Debug\netcoreapp2.1\Razor\Views\Upload\index.g.cshtml.cs
+E:\KutatasModszertan\Kutatas_core\Kutatas_core\obj\Debug\netcoreapp2.1\Razor\Views\Shared\Admin_Navigation.g.cshtml.cs
+E:\KutatasModszertan\Kutatas_core\Kutatas_core\obj\Debug\netcoreapp2.1\Razor\Views\Upload\index.g.cshtml.cs

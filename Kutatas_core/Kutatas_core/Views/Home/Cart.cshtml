@@ -16,7 +16,7 @@
 
 
     <!-- Button trigger modal -->
-    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+    <button type="button" id="orders" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" @*onclick="SaveOrder()"*@>
         Tovább a fizetéshez
     </button>
 
@@ -76,7 +76,7 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Vissza</button>
-                    <button type="button" class="btn btn-primary" id="order_food">Megrendelés</button>
+                    <button type="button" class="btn btn-primary" id="order_food" onclick="SaveOrder()">Megrendelés</button>
 
                 </div>
             </div>
@@ -207,7 +207,33 @@
             }
 
         }
-    }   
+        }  
+
+    function SaveOrder() {
+        var price = 0;
+
+        for (var i = 0; i < cartContent.length; i++) {
+            price = price + cartContent[i].price;
+        }
+
+        $.post('/Orders/InsertOrder', {
+            food: cartContent,
+            ordererFisrtName:$('#first_name').val(),
+            ordererLastName:$('#last_name').val(),
+            ordererCity:$('#city').val(),
+            ordererAddress:$('#address').val(),
+            ordererPhoneNumber: $('#phone').val(),
+            allPrice: price
+        },
+            function (data) {
+                if (data.Succeed) {
+                    alert("Mentve!");
+                }
+                else {
+                    alert("Nincs menntve!");
+                }
+            }, 'json');
+    }
    
 </script>
 

@@ -16,6 +16,20 @@ namespace Kutatas_core.Models
         [Required]
         public int Price { get; set; }
 
+        public string Description { get; set; }
+
+        public int Count { get; set; }
+
         public byte[] Image { get; set; }
+
+        public Food(int id, string name, int price, string description)
+        {
+            this.Id = id;
+            this.Name = name;
+            this.Price = price;
+            this.Description = description;
+        }
+        public Food()
+        {}
     }
 }

@@ -5,20 +5,20 @@
 </div>
 <body>
     <main class="container">
-        
+
         <form class="upload_form">
 
 
             <label for="foodname">Étel neve</label>
-            <input type="text" name="foodname" placeholder="étel neve" />
+            <input type="text" name="foodname" id="foodName" placeholder="étel neve" />
 
             <label for="fooddescription">Étel leírás</label>
-            <input type="text" name="fooddescription" placeholder="allergének, alapanyagok stb..." />
+            <input type="text" id ="foodDescription" name="fooddescription" placeholder="allergének, alapanyagok stb..." />
 
             <label for="foodprice">Étel ára</label>
-            <input type="text" name="foodprice" placeholder="Az árak tartalmazzák az adót!" />
+            <input type="text" id="foodPrice" name="foodprice" placeholder="Az árak tartalmazzák az adót!" />
 
-            <input type="submit" name="upload" id="upload_Subimt" onclick="uploadfood()" />
+            <input type="button" name="upload" id="upload_Subimt" onclick="InsertFood()" />
 
         </form>
 
@@ -30,18 +30,31 @@
         display: flex;
         flex-wrap: wrap;
         width: 100%;
-        padding:50px 50px;  
+        padding: 50px 50px;
     }
-    .upload_form input{
-        width:100%;
-    }
+
+        .upload_form input {
+            width: 100%;
+        }
 </style>
 <script>
 
-    function uploadfood() {
+    function InsertFood() {
+        $.post('/Food/InsertFood', {
+            name: $('#foodName').val(),
+            description: $('#foodDescription').val(),
+            price: $('#foodPrice').val()
+        },
+            function (data) {
+                if (data.Succeed) {
+                    alert("Mentve!");
+                }
+                else {
+                    alert("Nincs mentve!");
+                }
+            }, 'json');
+        //}
 
-
-        return console.log("elküld");
     }
 
 

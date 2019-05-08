@@ -23,13 +23,14 @@ namespace Kutatas_core.Controllers
         /// <param name="name"></param>
         /// <param name="price"></param>
         #region Kaja mentése adatbázisba
-        public void InsertFood(string name, int price)
+        public void InsertFood(string name, string description, int price)
         {
             try
             {
                 Food newFood = new Food();
                 newFood.Price = price;
                 newFood.Name = name;
+                newFood.Description = description;
 
                 // insert
                 using (dbContext)
@@ -54,43 +55,43 @@ namespace Kutatas_core.Controllers
         /// <param name="food"></param>
         /// <param name="Image"></param>
         /// <returns></returns> 
-        #region Kép konvertálás és mentés adatbáziba
-        public async Task<IActionResult> SaveFileFromDataBase(Food food, IFormFile Image)
-        {
-            try
-            {
-                if (ModelState.IsValid)
-                {
-                    if (Image != null)
-                    {
-                        if (Image.Length > 0)
-                        //Convert Image to byte and save to database
-                        {
-                            byte[] p1 = null;
-                            using (var fs1 = Image.OpenReadStream())
-                            using (var ms1 = new MemoryStream())
-                            {
-                                fs1.CopyTo(ms1);
-                                p1 = ms1.ToArray();
-                            }
-                            food.Image = p1;
-                        }
-                    }
+        //#region Kép konvertálás és mentés adatbáziba
+        //public async Task<IActionResult> SaveFileFromDataBase(Food food, IFormFile Image)
+        //{
+        //    try
+        //    {
+        //        if (ModelState.IsValid)
+        //        {
+        //            if (Image != null)
+        //            {
+        //                if (Image.Length > 0)
+        //                //Convert Image to byte and save to database
+        //                {
+        //                    byte[] p1 = null;
+        //                    using (var fs1 = Image.OpenReadStream())
+        //                    using (var ms1 = new MemoryStream())
+        //                    {
+        //                        fs1.CopyTo(ms1);
+        //                        p1 = ms1.ToArray();
+        //                    }
+        //                    food.Image = p1;
+        //                }
+        //            }
 
-                    dbContext.Add(Image);
-                    await dbContext.SaveChangesAsync();
+        //            dbContext.Add(Image);
+        //            await dbContext.SaveChangesAsync();
 
-                    return View();
-                }
+        //            return View();
+        //        }
 
-            }
-            catch (Exception e)
-            {
+        //    }
+        //    catch (Exception e)
+        //    {
 
-            }
-            return null;
-        }
-        #endregion
+        //    }
+        //    return null;
+        //}
+        //#endregion
         
         public FoodController(ApplicationDbContext dbContext)
         {
