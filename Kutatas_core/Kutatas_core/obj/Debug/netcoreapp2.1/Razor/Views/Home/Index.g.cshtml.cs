@@ -68,7 +68,7 @@ using Kutatas_core.Models;
             WriteLiteral("</div>\r\n\r\n");
             EndContext();
             BeginContext(185, 936, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("body", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "02ecac3a33474037a9b4768ba5553bab", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("body", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "98689d1bbd864517bbc8c579771f2b1c", async() => {
                 BeginContext(209, 195, true);
                 WriteLiteral("\r\n\r\n    <main class=\"cart\">\r\n        <ul>\r\n            <li class=\"listhead\">\r\n\r\n                <h2>Étel</h2>\r\n                <h2>Ár</h2>\r\n                <h2>Kosár</h2>\r\n\r\n            </li>\r\n\r\n");
                 EndContext();

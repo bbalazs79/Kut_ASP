@@ -68,7 +68,7 @@ using Kutatas_core.Models;
             WriteLiteral("</div>\r\n\r\n");
             EndContext();
             BeginContext(142, 1978, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("body", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "bb32fe39b91d4b1c8ea54b816b976f50", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("body", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3296a081903f4bd995ce2d16c9d5fbb5", async() => {
                 BeginContext(166, 1947, true);
                 WriteLiteral(@"
     <section class=""about"">

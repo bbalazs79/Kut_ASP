@@ -71,7 +71,7 @@ using Kutatas_core.Models;
             WriteLiteral("\r\n<header class=\"container\">\r\n    <nav class=\"nav\">\r\n        ");
             EndContext();
             BeginContext(109, 64, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "396606c7d9cc4dc7972597068bb80937", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "1b3b1c96247145cc89b8daa30c08517a", async() => {
                 BeginContext(165, 4, true);
                 WriteLiteral("Home");
                 EndContext();
@@ -97,7 +97,7 @@ using Kutatas_core.Models;
             WriteLiteral("\r\n        ");
             EndContext();
             BeginContext(183, 66, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "f158d80642d6475b8382a3b0e6ef777a", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "14bc661a46bd49e2a1e789c57fb37c0f", async() => {
                 BeginContext(240, 5, true);
                 WriteLiteral("About");
                 EndContext();
@@ -123,7 +123,7 @@ using Kutatas_core.Models;
             WriteLiteral("\r\n        ");
             EndContext();
             BeginContext(259, 70, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "9d55dc16b8cc4783b0a3a2962e023ff0", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "838e3027d14e4d2db3d8366fae7fcbbb", async() => {
                 BeginContext(318, 7, true);
                 WriteLiteral("Contact");
                 EndContext();
@@ -149,7 +149,7 @@ using Kutatas_core.Models;
             WriteLiteral("\r\n        ");
             EndContext();
             BeginContext(339, 69, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "600033b4faa94505a5a9610b33f85950", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "4c569a448acf410c94652d81631746b5", async() => {
                 BeginContext(398, 6, true);
                 WriteLiteral("Upload");
                 EndContext();
@@ -186,7 +186,7 @@ using Kutatas_core.Models;
                 ");
             EndContext();
             BeginContext(753, 71, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "9c7f100e9d2940a79db03565f281d890", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "ca5099e3d720496294318fe0b5605a41", async() => {
                 BeginContext(810, 10, true);
                 WriteLiteral(" Sign Out!");
                 EndContext();

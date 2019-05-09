@@ -72,12 +72,12 @@ using Kutatas_core.Models;
             WriteLiteral("</div>\r\n\r\n");
             EndContext();
             BeginContext(147, 1437, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("body", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "59452c1140114c1ead8f0865c53dcfd1", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("body", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "7ce6c48b597647168b34d0b1c229b929", async() => {
                 BeginContext(153, 200, true);
                 WriteLiteral("\r\n    <main class=\"container\">\r\n\r\n        <section class=\"login-container\" id=\"animate\">\r\n\r\n\r\n            <!-- action=\"/Controller/Metódus\" <- ez jó lesz a metódusokhoz később is... -->\r\n            <");
                 EndContext();
                 BeginContext(353, 1185, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "ae45d7c3f8724182951584160929d605", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "a59216ab17b04c92acdcef3ebbbbdc61", async() => {
                     BeginContext(413, 1118, true);
                     WriteLiteral(@"
 

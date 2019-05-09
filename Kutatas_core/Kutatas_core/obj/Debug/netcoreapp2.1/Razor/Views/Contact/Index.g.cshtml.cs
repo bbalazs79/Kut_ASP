@@ -76,7 +76,7 @@ using Kutatas_core.Models;
         ");
             EndContext();
             BeginContext(631, 545, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "4169a49323044f9281803a28c61f8bb6", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "c1743e4cd00c4fe182cb94f24928d0a5", async() => {
                 BeginContext(637, 532, true);
                 WriteLiteral(@"
             <input type=""text"" name=""firstName"" id=""firstName"" placeholder=""FIRST NAME"">
