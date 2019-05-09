@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Kutatas_core.Models;
 using Kutatas_core.Data;
+using Microsoft.AspNetCore.Authorization;
 
 namespace Kutatas_core.Controllers
 {
@@ -18,7 +19,7 @@ namespace Kutatas_core.Controllers
             this.dbContext = dbContext;
         }
         // Ezekkel mindenképpen kezdjetek valamit (az is jobb, ha mindegyikhez külön View és Controller van)
-
+        [Authorize(Roles = "Normal")]
         public IActionResult Cart()
         {
             return View();

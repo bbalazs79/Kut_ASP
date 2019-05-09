@@ -1,47 +1,98 @@
 ﻿
 @model List<Kutatas_core.Models.Orders>
 
-    @{
+@{
 
-ViewData["Title"] = "Index";
+    ViewData["Title"] = "Index";
 
-    }
+}
+<div id="navigation">
+    @{ Html.RenderPartial("~/Views/Shared/Admin_Navigation.cshtml"); }
+</div>
 
-    <table class="table">
-        <thead>
-            <tr>
-                <th>
-                    Name
-                </th>
-                <th>
-                    Price
-                </th>
-                <th>
-                    Image
-                </th>
-                <th></th>
-            </tr>
-        </thead>
-        <tbody>
+<body class="container">
+
+    <main class="orderlist">
+        <ul>
+            <li class="orderlisthead">
+                <h2>Rendelés adatai</h2>
+            </li>
+            <li class="orderlisthead">
+
+                <h2>Neve/Dátum</h2>
+                <h2>Étel neve/db</h2>
+                <h2>Elérhetőség/Fizetendő</h2>
+                <h2>Lakcím</h2>
+
+            </li>
+
             @foreach (var item in Model)
-        {
-            <tr>
-                <td>
-                    @Html.DisplayFor(modelItem => item.OrderedFoodId)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.OrdererFirstName)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.OrdererLastName)
-                </td>
-                @*<td>
-                    <a asp-action="Edit" asp-route-id="@item.Name">Edit</a>
-                    <a asp-action="Delete" asp-route-id="@item.Image">Delete</a>
-                </td>*@
-            </tr>
-        }
-        </tbody>
-    </table>
+            {<hr />
+             <li class="orderlistelements">
 
+                 <div>
+                     <div><h2>@Html.DisplayFor(modelItem => item.OrdererFirstName)@Html.DisplayFor(modelItem => item.OrdererLastName)</h2></div>
 
+                 </div>
+                 <div>
+                     <div><h2>@Html.DisplayFor(modelItem => item.OrderedFoodId)</h2></div>
+                 </div>
+                 <div>
+                     <div>
+                         <h2><h2>@Html.DisplayFor(modelItem => item.OrdererPhoneNumber)</h2></h2>
+                     </div>
+                 </div>
+                 <div>
+                     <div>
+                         <h2>@Html.DisplayFor(modelItem => item.OrdererAddress)</h2>
+                     </div>
+                 </div>
+
+                 <div>
+                     <div><h2>@Html.DisplayFor(modelItem => item.OrderDate)</h2></div>
+                 </div>
+                 <div>
+                     <div><h2> @Html.DisplayFor(modelItem => item.OrderFoodCount) db</h2> </div>
+                 </div>
+
+                 <div>
+                     <div>
+                         <h2><h2>@Html.DisplayFor(modelItem => item.AllPrice) Ft</h2></h2>
+                     </div>
+                 </div>
+
+                 <div>
+                     <div><h2>@Html.DisplayFor(modelItem => item.OrdererCity)</h2></div>
+                 </div>
+                 
+             </li>
+            }
+        </ul>
+        <div class="sum"></div>
+    </main>
+</body>
+<style>
+    .orderlistelements {
+        display: grid;
+        grid-template-columns:1fr 1fr 1fr 1fr;
+        text-align: center;
+        background-color: lightgray;
+        width: 100%;
+        flex-flow: row;
+        height: 100%;
+    }
+    hr{
+       margin:0px;
+       height:5px;
+       
+    }
+    .orderlisthead {
+        width: 100%;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        text-align: center;
+        color: black;
+        background-color: lightgrey;
+        opacity: 0.6;
+    }
+</style>

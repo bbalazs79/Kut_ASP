@@ -5,11 +5,11 @@
 
 <header class="container">
     <nav class="nav">
-        <a asp-area="" asp-controller="Home" asp-action="Index">Home</a>
-        <a asp-area="" asp-controller="About" asp-action="Index">About</a>
-        <a asp-area="" asp-controller="Contact" asp-action="Index">Contact</a>
-        <a asp-area="" asp-controller="Home" asp-action="Cart" id="cart">Cart</a>
-        
+        <a asp-area="" asp-controller="Home" asp-action="Index">Főoldal</a>
+        <a asp-area="" asp-controller="About" asp-action="Index">Rólunk</a>
+        <a asp-area="" asp-controller="Contact" asp-action="Index">Kapcsolat</a>
+        <a asp-area="" asp-controller="Home" asp-action="Cart" id="cart">Kosár</a>
+        <a asp-area="" asp-controller="OrderListView" asp-action="Index">Admin</a>
         
         
 
@@ -20,6 +20,7 @@
             <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Sign in/up</a>
             <div class="dropdown-menu" id="drop">
                 <a asp-area="" asp-controller="Registration" asp-action="Index" id="Registration">Sign Up!</a>
+                <a asp-area="" asp-controller="User" asp-action="Logout"> Sign Out!</a>
                 <a asp-area="" asp-controller="Login" asp-action="Index"> Sign In!</a>
             </div>
         </li>

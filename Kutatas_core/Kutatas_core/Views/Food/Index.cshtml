@@ -3,43 +3,43 @@
 @{
     ViewData["Title"] = "Food";
 }
+<div id="navigation">
 
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                Name
-            </th>
-            <th>
-                Price
-            </th>
-            <th>
-                Image
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (var item in Model)
-        {
-            <tr>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Name)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Price)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Image)
-                </td>
-                <td>
-                    <a asp-action="Edit" asp-route-id="@item.Name">Edit</a>
-                    <a asp-action="Delete" asp-route-id="@item.Image">Delete</a>
-                </td>
-            </tr>
-        }
-    </tbody>
-</table>
+    @{ Html.RenderPartial("~/Views/Shared/Admin_Navigation.cshtml"); }
+
+</div>
+<body>
+    <main class="container">
+        <ul>
+            <li class="listhead">
+
+                <h2>Étel</h2>
+                <h2>Ár</h2>
+                <h2>Opciók</h2>
+
+            </li>
+
+            @foreach (var item in Model)
+            {
+                <li class="foodelements">
+                    <div>
+                        <div><h2>@Html.DisplayFor(modelItem => item.Name)</h2></div>
+                        <div>
+                            <p>allergének fdddddddddddddddddddddddddddddddddddddd</p>
+
+                        </div>
+                    </div>
+                    <div><h2> @Html.DisplayFor(modelItem => item.Price) Ft</h2> </div>
+                    <div>
+                        <a asp-action="Edit" asp-route-id="@item.Name">Edit</a>
+                        <a asp-action="Delete" asp-route-id="@item.Image">Delete</a>
+                    </div>
+
+                </li>
+            }
+        </ul>
+    </main>
+   </body>
 
 
 <script>

@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Kutatas_core.Data;
 using Microsoft.AspNetCore.Mvc;
 using Kutatas_core.Models;
+using Microsoft.AspNetCore.Authorization;
 
 namespace Kutatas_core.Controllers
 {
@@ -16,7 +17,7 @@ namespace Kutatas_core.Controllers
         {
             this.dbContext = dbContext;
         }
-
+        [Authorize(Roles = "Admin")]
         public IActionResult Index()
         {
             return View(this.dbContext.Orders.ToList());
